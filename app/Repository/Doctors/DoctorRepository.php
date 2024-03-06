@@ -9,6 +9,7 @@ use App\Traits\UploadTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 
 class DoctorRepository implements DoctorRepositoryInterface
 {
@@ -73,11 +74,27 @@ class DoctorRepository implements DoctorRepositoryInterface
         return redirect()->route('Sections.index');
     }
 
-    public function destroy($request)
+    public function destroy(Request $request)
     {
-        Section::findOrFail($request->id)->delete();
-        session()->flash('delete');
-        return redirect()->route('Sections.index');
+        if($request->page_id==1){
+
+            if($request->filename){
+
+              $this->Delete_attachment('upload_image','doctors/'.$request->filename,$request->id,$request->filename);
+            }
+               Doctor::destroy($request->id);
+               session()->flash('delete');
+               return redirect()->route('Doctors.index');
+           }
+
+
+           //---------------------------------------------------------------
+
+           else{
+
+
+
+           }
     }
 
 

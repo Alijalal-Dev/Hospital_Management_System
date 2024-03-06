@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Interfaces\Doctors;
+use Illuminate\Http\Request;
 
 interface DoctorRepositoryInterface
 {
@@ -17,6 +18,6 @@ interface DoctorRepositoryInterface
     public function update($request);
 
     // destroy Doctor
-    public function destroy($request);
+    public function destroy(Request $request);
 
 }
