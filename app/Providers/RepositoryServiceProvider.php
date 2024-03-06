@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Repository\Sections\SectionRepository;
 use App\Interfaces\Sections\SectionRepositoryInterface;
+use App\Interfaces\Doctors\DoctorRepositoryInterface;
+use App\Repository\Doctors\DoctorRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -15,6 +17,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         //
         $this->app->bind(SectionRepositoryInterface::class, SectionRepository::class);
+        $this->app->bind(DoctorRepositoryInterface::class, DoctorRepository::class);
     }
 
     /**

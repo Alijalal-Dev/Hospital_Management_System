@@ -8,13 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
-    use Translatable;
-    use HasFactory;
-    public $translatedAttributes = ['name','appointments'];
-    public $fillable= ['email','email_verified_at','password','phone','price','name','appointments','section_id'];
+  use Translatable;
+  use HasFactory;
+  public $translatedAttributes = ['name', 'appointments'];
+  public $fillable = ['email', 'email_verified_at', 'password', 'phone', 'price', 'name', 'appointments', 'section_id'];
 
-    /*Get the Doctor's image.*/
-  public function image(){
-      return $this->morphOne(Image::class, 'imageable');
-    }
+  /*Get the Doctor's image.*/
+  public function image()
+  {
+    return $this->morphOne(Image::class, 'imageable');
+  }
+  // One To One get section of Doctor
+  public function section()
+  {
+    return $this->belongsTo(Section::class);
+  }
 }

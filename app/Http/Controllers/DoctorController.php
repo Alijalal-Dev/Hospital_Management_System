@@ -4,33 +4,36 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Interfaces\Doctors\DoctorRepositoryInterface;
 
 class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    private $Doctors;
+
+    public function __construct(DoctorRepositoryInterface $Doctors)
+    {
+        $this->Doctors = $Doctors;
+    }
+
+
     public function index()
     {
-        $doctors = Doctor::find(19);
-
-        dd($doctors->image);
+        return $this->Doctors->index();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
-        //
+        return $this->Doctors->create();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+        return $this->Doctors->store($request);
     }
 
     /**
