@@ -40,7 +40,7 @@
                                         {{trans('doctors.name')}}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <input class="form-control" name="name" type="text">
+                                    <input class="form-control" name="name" autofocus type="text">
                                 </div>
                             </div>
 
@@ -101,33 +101,17 @@
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <select multiple="multiple" class="testselect2" name="appointments[]">
                                         <option selected value="" selected disabled>-- حدد المواعيد --</option>
-                                        <option value="السبت">السبت</option>
-                                        <option value="الأحد">الأحد</option>
-                                        <option value="الأثنين">الأثنين</option>
-                                        <option value="الثلاثاء">الثلاثاء</option>
-                                        <option value="الأربعاء">الأربعاء</option>
-                                        <option value="الخميس">الخميس</option>
-                                        <option value="الجمعة">الجمعة</option>
+                                        @foreach($appointments as $appointment)
+                                            <option value="{{$appointment->id}}">{{$appointment->name}}</option>
+                                        @endforeach
+                                        
                                     </select>
 
                                 </div>
 
                             </div>
 
-                            <div class="row row-xs align-items-center mg-b-20">
-                                <div class="col-md-1">
-                                    <label for="exampleInputEmail1">
-                                        {{trans('doctors.price')}}</label>
-                                </div>
-
-                                <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <input class="form-control" name="price" value="0.00" type="text">
-                                </div>
-
-                            </div>
-
-
-
+                
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">

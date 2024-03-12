@@ -47,25 +47,41 @@ class DoctorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
+        return $this->Doctors->edit($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+
+    public function update(Request $request)
     {
         //
+        return $this->Doctors->update($request);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Request $request)
     {
         //
         return $this->Doctors->destroy($request);
+    }
+
+    public function update_password(Request $request)
+    {
+        $this->validate($request, [
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6'
+        ]);
+
+        return $this->Doctors->update_password($request);
+    }
+
+    public function update_status(Request $request)
+    {
+        $this->validate($request, [
+            'status' => 'required|in:0,1',
+        ]);
+        return $this->Doctors->update_status($request);
     }
 }
