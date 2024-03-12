@@ -25,7 +25,8 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function create()
     {
         $sections = Section::all();
-        return view('Dashboard.Doctors.add', compact('sections'));
+        $appointments = Appointment::all();
+        return view('Dashboard.Doctors.add', compact('sections', 'appointments'));
     }
 
 
