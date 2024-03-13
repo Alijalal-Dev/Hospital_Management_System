@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -58,6 +59,12 @@ Route::group(
             Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
 
             //############################# end Doctors route ######################################
+    
+            //############################# SingleService route ##########################################
+    
+            Route::resource('Service', SingleServiceController::class);
+
+            //############################# end SingleService route ######################################
     
 
         });

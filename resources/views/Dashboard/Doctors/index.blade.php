@@ -67,7 +67,7 @@
                                     <td>
                                         <input type="checkbox" name="delete_select" value="{{$doctor->id}}" class="delete_select">
                                     </td>
-                                    <td>{{ $doctor->name }}</td>
+                                    <td >{{ $doctor->name }}</td>
                                     <td>
                                         @if($doctor->image)
                                             <img src="{{Url::asset('Dashboard/img/doctors/'.$doctor->image->filename)}}"
