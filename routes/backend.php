@@ -6,7 +6,10 @@ use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
+use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,9 +68,23 @@ Route::group(
             Route::resource('Service', SingleServiceController::class);
 
             //############################# end SingleService route ######################################
+
+            //############################# GroupServices route ##########################################
+           
+
+
+            Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
+
+            Livewire::setUpdateRoute(function($handle){
+                return Route::post('/custom/livewire/update',$handle);
+            });
+         
+
+         //############################# end GroupServices route ######################################
     
 
         });
+       
         require __DIR__ . '/auth.php';
 
     }
