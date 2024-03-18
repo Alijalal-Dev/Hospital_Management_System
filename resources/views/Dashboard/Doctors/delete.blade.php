@@ -15,11 +15,11 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <h5>{{trans('sections_trans.Warning')}}</h5>
-                    <input type="text" value="1" name="page_id">
+                    <input type="hidden" value="1" name="page_id">
                     @if($doctor->image)
-                        <input type="text" name="filename" value="{{$doctor->image->filename}}">
+                        <input type="hidden" name="filename" value="{{$doctor->image->filename}}">
                     @endif
-                    <input type="text" name="id" value="{{$doctor->id}}">
+                    <input type="hidden" name="id" value="{{$doctor->id}}">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Dashboard/sections_trans.Close')}}</button>

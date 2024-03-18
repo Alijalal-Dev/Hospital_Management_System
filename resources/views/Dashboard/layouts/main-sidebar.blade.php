@@ -40,7 +40,7 @@
 					<li class="slide">
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3.31 11l2.2 8.01L18.5 19l2.2-8H3.31zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" opacity=".3"/><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM12 4.8L14.8 9H9.2L12 4.8zM18.5 19l-12.99.01L3.31 11H20.7l-2.2 8zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg><span class="side-menu__label">{{trans('main-sidebar_trans.doctors')}}</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">
-						    <li><a class="slide-item" href="{{ route('Doctors.index') }}">{{trans('Dashboard/main-sidebar_trans.view_all')}}</a></li>
+							<li><a class="slide-item" href="{{ route('Doctors.index') }}">{{trans('Dashboard/main-sidebar_trans.view_all')}}</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='product-details') }}">Product-Details</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='product-cart') }}">Cart</a></li>
 						</ul>
@@ -51,15 +51,15 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{route('Service.index')}}">{{trans('main-sidebar_trans.Single_service')}}</a></li>
                     <li><a class="slide-item" href="{{route('Add_GroupServices')}}">{{trans('main-sidebar_trans.group_services')}}</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . $page='contacts') }}">{{trans('main-sidebar_trans.Insurance')}}</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . $page='rangeslider') }}">{{trans('main-sidebar_trans.ambulance')}}</a></li>
+                    <li><a class="slide-item" href="{{route('insurance.index')}}">{{trans('main-sidebar_trans.Insurance')}}</a></li>
+                    <li><a class="slide-item" href="{{route('Ambulance.index')}}">{{trans('main-sidebar_trans.ambulance')}}</a></li>
                     <li><a class="slide-item" href="{{ url('/' . $page='calendar') }}">{{trans('main-sidebar_trans.Ambulance_calls')}}</a></li>
                 </ul>
             </li>
 					<li class="slide">
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6.26 9L12 13.47 17.74 9 12 4.53z" opacity=".3"/><path d="M19.37 12.8l-7.38 5.74-7.37-5.73L3 14.07l9 7 9-7zM12 2L3 9l1.63 1.27L12 16l7.36-5.73L21 9l-9-7zm0 11.47L6.26 9 12 4.53 17.74 9 12 13.47z"/></svg><span class="side-menu__label">Elements</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item" href="{{route('Add_GroupServices')}}">Alerts</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='alerts') }}">Alerts</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='avatar') }}">Avatar</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='breadcrumbs') }}">Breadcrumbs</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='buttons') }}">Buttons</a></li>

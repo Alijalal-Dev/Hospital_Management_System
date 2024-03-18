@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Service_Group', function (Blueprint $table) {
+        Schema::create('insurances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('Group_id')->references('id')->on('groups')->onDelete('cascade');
-            $table->foreignId('Service_id')->references('id')->on('Services')->onDelete('cascade');
-            $table->integer('quantity');
+            $table->string('insurance_code');
+            $table->string('discount_percentage');
+            $table->string('Company_rate');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_group');
+        Schema::dropIfExists('insurances');
     }
 };

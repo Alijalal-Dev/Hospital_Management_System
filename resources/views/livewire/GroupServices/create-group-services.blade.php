@@ -1,8 +1,16 @@
 <div>
 
-    @if ($ServiceSaved)
+@if ($ServiceSaved)
         <div class="alert alert-info">تم حفظ البيانات بنجاح.</div>
     @endif
+
+    @if ($ServiceUpdated)
+    <div class="alert alert-info">تم تعديل البيانات بنجاح.</div>
+    @endif
+
+    @if($show_table)
+        @include('livewire.GroupServices.index')
+    @else
     <form wire:submit.prevent="saveGroup" autocomplete="off">
         @csrf
         <div class="form-group">
@@ -100,29 +108,28 @@
 
                 <div class="col-lg-4 ml-auto text-right">
                     <table class="table pull-right">
-                    <tr>
+                        <tr>
                             <td style="color: red">الاجمالي</td>
                             <td>{{ number_format($subtotal, 2) }}</td>
-                    </tr>
-                    <tr>
+                        </tr>
+
+                        <tr>
                             <td style="color: red">قيمة الخصم</td>
                             <td width="125">
-                                <input type="number" name="discount_value" class="form-control w-75 d-inline" wire:model="discount_value" wire:change="calculateTotal" />
+                                <input type="number" name="discount_value" class="form-control w-75 d-inline" wire:model="discount_value" wire:change="calculateTotal">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="color: red">نسبة الضريبة</td>
+                            <td>
+                                <input type="number" name="taxes" class="form-control w-75 d-inline" min="0" max="100" wire:model="taxes" wire:change="calculateTotal"> %
                             </td>
                         </tr>
                         <tr>
                             <td style="color: red">الاجمالي مع الضريبة</td>
                             <td>{{ number_format($total, 2) }}</td>
                         </tr>
-                        
-                        <tr>
-                            <td style="color: red">نسبة الضريبة</td>
-                            <td>
-                                <input type="number" name="taxes" class="form-control w-75 d-inline" min="0" max="100" wire:model="taxes" wire:change="calculateTotal" /> %
-                            </td>
-                        </tr>
-                       
-
                     </table>
                 </div> <br/>
                 <div>
@@ -132,7 +139,7 @@
         </div>
 
     </form>
-
+    @endif
 
 </div>
 

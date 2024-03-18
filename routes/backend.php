@@ -4,8 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
+use App\Http\Controllers\Dashboard\InsuranceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\Dashboard\AmbulanceController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -78,9 +80,22 @@ Route::group(
             Livewire::setUpdateRoute(function($handle){
                 return Route::post('/custom/livewire/update',$handle);
             });
-         
 
          //############################# end GroupServices route ######################################
+
+          //############################# insurance route ##########################################
+
+        Route::resource('insurance', InsuranceController::class);
+
+        //############################# end insurance route ######################################
+
+         //############################# Ambulance route ##########################################
+
+         Route::resource('Ambulance', AmbulanceController::class);
+
+         //############################# end Ambulance route ######################################
+ 
+
     
 
         });
