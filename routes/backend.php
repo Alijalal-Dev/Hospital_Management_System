@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\InsuranceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\Dashboard\AmbulanceController;
+use App\Http\Controllers\Dashboard\PatientController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -94,6 +95,12 @@ Route::group(
          Route::resource('Ambulance', AmbulanceController::class);
 
          //############################# end Ambulance route ######################################
+
+          //############################# Patients route ##########################################
+
+        Route::resource('Patients', PatientController::class);
+
+        //############################# end Patients route ######################################
  
 
     
