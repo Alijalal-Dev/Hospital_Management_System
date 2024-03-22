@@ -10,6 +10,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\Dashboard\AmbulanceController;
 use App\Http\Controllers\Dashboard\PatientController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
+use App\Http\Controllers\Dashboard\PaymentAccountController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -106,6 +107,8 @@ Route::group(
           //############################# single_invoices route ##########################################
 
           Route::view('single_invoices','livewire.single_invoices.index')->name('single_invoices');
+          // print single invoice
+          Route::view('Print_single_invoices','livewire.single_invoices.print')->name('Print_single_invoices');
 
           //############################# end single_invoices route ######################################
 
@@ -114,6 +117,12 @@ Route::group(
         Route::resource('Receipt', ReceiptAccountController::class);
 
         //############################# end Receipt route ######################################
+
+        //############################# Payment route ##########################################
+
+        Route::resource('Payment', PaymentAccountController::class);
+
+        //############################# end Payment route ######################################
  
 
     
