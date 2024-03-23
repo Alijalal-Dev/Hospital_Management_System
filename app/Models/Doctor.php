@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-
-class Doctor extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class Doctor extends Authenticatable
 {
   use Translatable;
   use HasFactory;

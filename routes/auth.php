@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -58,6 +59,16 @@ Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
 Route::post('reset-password', [NewPasswordController::class, 'store'])
     ->middleware('guest')
     ->name('password.store');
+
+//################################## Route Doctor ##############################################
+
+Route::post('/login/doctor', [DoctorController::class, 'store'])->middleware('guest')->name('login.doctor');
+
+Route::post('/logout/doctor', [DoctorController::class, 'destroy'])->middleware('auth:doctor')->name('logout.doctor');
+
+
+//##################################################################################
+
 
 //##################################################################################
 

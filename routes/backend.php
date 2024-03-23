@@ -51,6 +51,14 @@ Route::group(
             return view('Dashboard.Admin.dashboard');
         })->middleware(['auth:admin'])->name('dashboard.admin');
 
+        //################################ dashboard doctor ########################################
+    
+        Route::get('/dashboard/doctor', function () {
+            return view('Dashboard.doctor.dashboard');
+        })->middleware(['auth:doctor'])->name('dashboard.doctor');
+
+        //################################ end dashboard doctor #####################################
+    
         //################################ end dashboard admin #####################################
         Route::middleware(['auth:admin'])->group(function () {
 
@@ -73,71 +81,71 @@ Route::group(
             Route::resource('Service', SingleServiceController::class);
 
             //############################# end SingleService route ######################################
-
+    
             //############################# GroupServices route ##########################################
-           
-
-
-            Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
-
-            Livewire::setUpdateRoute(function($handle){
-                return Route::post('/custom/livewire/update',$handle);
-            });
-
-         //############################# end GroupServices route ######################################
-
-          //############################# insurance route ##########################################
-
-        Route::resource('insurance', InsuranceController::class);
-
-        //############################# end insurance route ######################################
-
-         //############################# Ambulance route ##########################################
-
-         Route::resource('Ambulance', AmbulanceController::class);
-
-         //############################# end Ambulance route ######################################
-
-          //############################# Patients route ##########################################
-
-        Route::resource('Patients', PatientController::class);
-
-        //############################# end Patients route ######################################
-
-          //############################# single_invoices route ##########################################
-
-          Route::view('single_invoices','livewire.single_invoices.index')->name('single_invoices');
-          // print single invoice
-          Route::view('Print_single_invoices','livewire.single_invoices.print')->name('Print_single_invoices');
-
-          //############################# end single_invoices route ######################################
-
-          //############################# Receipt route ##########################################
-
-        Route::resource('Receipt', ReceiptAccountController::class);
-
-        //############################# end Receipt route ######################################
-
-        //############################# Payment route ##########################################
-
-        Route::resource('Payment', PaymentAccountController::class);
-
-        //############################# end Payment route ######################################
-
-          //############################# single_invoices route ##########################################
-
-          Route::view('group_invoices','livewire.Group_invoices.index')->name('group_invoices');
-
-          Route::view('group_Print_single_invoices','livewire.Group_invoices.print')->name('group_Print_single_invoices');
-  
-          //############################# end single_invoices route ######################################
-  
- 
-
     
 
+
+            Route::view('Add_GroupServices', 'livewire.GroupServices.include_create')->name('Add_GroupServices');
+
+            Livewire::setUpdateRoute(function ($handle) {
+                return Route::post('/custom/livewire/update', $handle);
+            });
+
+            //############################# end GroupServices route ######################################
+    
+            //############################# insurance route ##########################################
+    
+            Route::resource('insurance', InsuranceController::class);
+
+            //############################# end insurance route ######################################
+    
+            //############################# Ambulance route ##########################################
+    
+            Route::resource('Ambulance', AmbulanceController::class);
+
+            //############################# end Ambulance route ######################################
+    
+            //############################# Patients route ##########################################
+    
+            Route::resource('Patients', PatientController::class);
+
+            //############################# end Patients route ######################################
+    
+            //############################# single_invoices route ##########################################
+    
+            Route::view('single_invoices', 'livewire.single_invoices.index')->name('single_invoices');
+            // print single invoice
+            Route::view('Print_single_invoices', 'livewire.single_invoices.print')->name('Print_single_invoices');
+
+            //############################# end single_invoices route ######################################
+    
+            //############################# Receipt route ##########################################
+    
+            Route::resource('Receipt', ReceiptAccountController::class);
+
+            //############################# end Receipt route ######################################
+    
+            //############################# Payment route ##########################################
+    
+            Route::resource('Payment', PaymentAccountController::class);
+
+            //############################# end Payment route ######################################
+    
+            //############################# single_invoices route ##########################################
+    
+            Route::view('group_invoices', 'livewire.Group_invoices.index')->name('group_invoices');
+
+            Route::view('group_Print_single_invoices', 'livewire.Group_invoices.print')->name('group_Print_single_invoices');
+
+            //############################# end single_invoices route ######################################
+    
+
+
+
+
         });
-       
+
         require __DIR__ . '/auth.php';
 
     }
