@@ -7,6 +7,7 @@ use App\Models\Patient;
 use App\Models\PatientAccount;
 use App\Models\ReceiptAccount;
 use App\Models\single_invoice;
+use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,17 +19,14 @@ class PatientRepository implements PatientRepositoryInterface
        return view('Dashboard.Patients.index',compact('Patients'));
    }
    public function Show($id)
-   {
-       $Patient = patient::findorfail($id);
-       $invoices = single_invoice::where('patient_id', $id)->get();
-       $receipt_accounts = ReceiptAccount::where('patient_id', $id)->get();
-       $Patient_accounts = PatientAccount::orWhereNotNull('single_invoice_id')
-           ->orWhereNotNull('receipt_id')
-           ->orWhereNotNull('Payment_id')
-           ->where('patient_id', $id)
-           ->get();
-       return view('Dashboard.Patients.show', compact('Patient', 'invoices', 'receipt_accounts', 'Patient_accounts'));
-   }
+    {
+        $Patient = patient::findorfail($id);
+        $invoices = Invoice::where('patient_id', $id)->get();
+        $receipt_accounts = ReceiptAccount::where('patient_id', $id)->get();
+        $Patient_accounts = PatientAccount::where('patient_id', $id)->get();
+
+        return view('Dashboard.Patients.show', compact('Patient', 'invoices', 'receipt_accounts', 'Patient_accounts'));
+    }
 
    public function create()
    {

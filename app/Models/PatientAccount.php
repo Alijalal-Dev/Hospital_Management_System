@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PatientAccount extends Model
 {
     use HasFactory;
-    public function single_invoice()
+    public function invoice()
     {
-        return $this->belongsTo(single_invoice::class,'single_invoice_id');
+        return $this->belongsTo(invoice::class,'invoice_id');
     }
 
     public function ReceiptAccount()
