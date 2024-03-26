@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('diagnostics', function (Blueprint $table) {
+        Schema::create('rays', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->dateTime('review_date')->nullable();
-            $table->longText('diagnosis');
-            $table->longText('medicine');
+            $table->longText('description');
             $table->foreignId('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->foreignId('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('diagnostics');
+        Schema::dropIfExists('rays');
     }
 };

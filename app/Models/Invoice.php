@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     use HasFactory;
+
+    protected $fillable =['invoice_status'];
     public function Group()
     {
         return $this->belongsTo(Group::class,'Group_id');
