@@ -106,122 +106,46 @@
                                             </div>
                                         </div>
 
-                                        {{-- End Invices Patient --}}
+                                        {{-- End Invoices Patient --}}
 
 
 
+                                        
                                         {{-- Start Receipt Patient  --}}
 
                                         <div class="tab-pane" id="tab3">
                                             <div class="table-responsive">
-{{--                                                <table class="table table-hover text-md-nowrap text-center">--}}
-{{--                                                    <thead>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <th>#</th>--}}
-{{--                                                        <th>تاريخ الاضافه</th>--}}
-{{--                                                        <th>المبلغ</th>--}}
-{{--                                                        <th>البيان</th>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </thead>--}}
-{{--                                                    <tbody>--}}
-{{--                                                    @foreach($receipt_accounts as $receipt_account)--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td>{{$loop->iteration}}</td>--}}
-{{--                                                            <td>{{$receipt_account->date}}</td>--}}
-{{--                                                            <td>{{$receipt_account->Debit}}</td>--}}
-{{--                                                            <td>{{$receipt_account->description}}</td>--}}
-{{--                                                        </tr>--}}
-{{--                                                        <br>--}}
-{{--                                                    @endforeach--}}
-{{--                                                    <tr>--}}
-{{--                                                        <th scope="row" class="alert alert-success">الاجمالي--}}
-{{--                                                        </th>--}}
-{{--                                                        <td colspan="4"--}}
-{{--                                                            class="alert alert-primary">{{ number_format( $receipt_accounts->sum('Debit') , 2)}}</td>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </tbody>--}}
-{{--                                                </table>--}}
+                                                <table class="table table-hover text-md-nowrap text-center">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>اسم الخدمه</th>
+                                                        <th>اسم الدكتور</th>
+                                                        <th>العمليات</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($patient_Laboratories as $patient_Laboratorie)
+                                                        <tr>
+                                                            <td>{{$loop->iteration}}</td>
+                                                            <td>{{$patient_Laboratorie->description}}</td>
+                                                            <td>{{$patient_Laboratorie->doctor->name}}</td>
+                                                            @if($patient_Laboratorie->doctor_id == auth()->user()->id)
+                                                                <td>
+                                                                    <a class="modal-effect btn btn-sm btn-primary" data-effect="effect-scale"  data-toggle="modal" href="#edit_laboratorie_conversion{{$patient_Laboratorie->id}}"><i class="fas fa-edit"></i></a>
+                                                                    <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#deleted_laboratorie{{$patient_Laboratorie->id}}"><i class="las la-trash"></i></a>
+                                                                </td>
+                                                            @endif
+                                                        </tr>
+                                                        @include('Dashboard.doctor.invoices.edit_laboratorie_conversion')
+                                                        @include('Dashboard.doctor.invoices.deleted_laboratorie')
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
 
                                         {{-- End Receipt Patient  --}}
-
-
-                                        {{-- Start payment accounts Patient --}}
-                                        <div class="tab-pane" id="tab4">
-{{--                                            <div class="table-responsive">--}}
-{{--                                                <table class="table table-hover text-md-nowrap text-center" id="example1">--}}
-{{--                                                    <thead>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <th>#</th>--}}
-{{--                                                        <th>تاريخ الاضافه</th>--}}
-{{--                                                        <th>الوصف</th>--}}
-{{--                                                        <th>مدبن</th>--}}
-{{--                                                        <th>دائن</th>--}}
-{{--                                                        <th>الرصيد النهائي</th>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </thead>--}}
-{{--                                                    <tbody>--}}
-{{--                                                    @foreach($Patient_accounts as $Patient_account)--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td>{{$loop->iteration}}</td>--}}
-{{--                                                            <td>{{$Patient_account->date}}</td>--}}
-{{--                                                            <td>--}}
-
-{{--                                                               @if($Patient_account->invoice_id == true)--}}
-{{--                                                              {{$Patient_account->invoice->Service->name ?? $Patient_account->invoice->Group->name}}--}}
-
-{{--                                                                @elseif($Patient_account->Payment_id == true)--}}
-{{--                                                                    {{$Patient_account->PaymentAccount->description}}--}}
-{{--                                                                @endif--}}
-
-{{--                                                            </td>--}}
-{{--                                                            <td>{{ $Patient_account->Debit}}</td>--}}
-{{--                                                            <td>{{ $Patient_account->credit}}</td>--}}
-{{--                                                            <td></td>--}}
-{{--                                                        </tr>--}}
-{{--                                                        <br>--}}
-{{--                                                    @endforeach--}}
-{{--                                                    <tr>--}}
-{{--                                                        <th colspan="3" scope="row" class="alert alert-success">--}}
-{{--                                                            الاجمالي--}}
-{{--                                                        </th>--}}
-{{--                                                        <td class="alert alert-primary">{{ $Debit= $Patient_accounts->sum('Debit')}}</td>--}}
-{{--                                                        <td class="alert alert-primary">{{ $credit =$Patient_accounts->sum('credit')}}</td>--}}
-{{--                                                        <td class="alert alert-danger">--}}
-{{--                                                           <span class="text-danger"> {{$Debit-$credit}}  {{ $Debit-$credit > 0 ? 'مدين' :'دائن'}}</span>--}}
-{{--                                                        </td>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </tbody>--}}
-{{--                                                </table>--}}
-
-{{--                                            </div>--}}
-
-                                            <br>
-
-                                        </div>
-
-                                        {{-- End payment accounts Patient --}}
-
-
-                                        <div class="tab-pane" id="tab5">
-                                            <p>praesentium voluptatum deleniti atque corrquas molestias excepturi sint
-                                                occaecati cupiditate non provident,</p>
-                                            <p class="mb-0">similique sunt in culpa qui officia deserunt mollitia animi,
-                                                id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                                                expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
-                                                optio cumque nihil impedit quo minus id quod maxime placeat facere
-                                                possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-                                        </div>
-                                        <div class="tab-pane" id="tab6">
-                                            <p>praesentium et quas molestias excepturi sint occaecati cupiditate non
-                                                provident,</p>
-                                            <p class="mb-0">similique sunt in culpa qui officia deserunt mollitia animi,
-                                                id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                                                expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
-                                                optio cumque nihil impedit quo minus id quod maxime placeat facere
-                                                possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

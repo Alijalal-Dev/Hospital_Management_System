@@ -25,6 +25,8 @@ use App\Repository\doctor_dashboard\DiagnosisRepository;
 use App\Interfaces\doctor_dashboard\DiagnosisRepositoryInterface;
 use App\Repository\doctor_dashboard\RaysRepository;
 use App\Interfaces\doctor_dashboard\RaysRepositoryInterface;
+use App\Interfaces\doctor_dashboard\LaboratoriesRepositoryInterface;
+use App\Repository\doctor_dashboard\LaboratoriesRepository;
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -46,6 +48,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(InvoicesRepositoryInterface::class, InvoicesRepository::class);
         $this->app->bind(DiagnosisRepositoryInterface::class, DiagnosisRepository::class);
         $this->app->bind(RaysRepositoryInterface::class, RaysRepository::class);
+        $this->app->bind(LaboratoriesRepositoryInterface::class, LaboratoriesRepository::class);
     }
 
     /**

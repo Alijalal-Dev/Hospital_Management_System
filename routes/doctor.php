@@ -7,6 +7,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard_Doctor\DiagnosticController;
 use App\Http\Controllers\Dashboard_Doctor\RayController;
 use App\Http\Controllers\Dashboard_Doctor\PatientDetailsController;
+use App\Http\Controllers\Dashboard_Doctor\LaboratorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,12 @@ Route::group(
               Route::resource('rays', RayController::class);
 
               //############################# end rays route ######################################
+
+              //############################# Laboratories route ##########################################
+
+            Route::resource('Laboratories', LaboratorieController::class);
+
+            //############################# end Laboratories route ######################################
   
   
               //############################# patientsdetails route ##########################################
