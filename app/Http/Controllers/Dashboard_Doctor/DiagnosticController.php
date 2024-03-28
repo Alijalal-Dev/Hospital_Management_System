@@ -37,14 +37,6 @@ class DiagnosticController extends Controller
     {
         return $this->Diagnosis->addReview($request);
     }
-
-
-    public function show($id)
-    {
-        return $this->Diagnosis->show($id);
-    }
-
-
     public function edit($id)
     {
         //
