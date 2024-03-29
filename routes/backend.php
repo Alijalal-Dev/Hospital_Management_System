@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\AmbulanceController;
 use App\Http\Controllers\Dashboard\PatientController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
 use App\Http\Controllers\Dashboard\PaymentAccountController;
+use App\Http\Controllers\Dashboard\RayEmployeeController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -132,6 +133,13 @@ Route::group(
 
             //############################# end Payment route ######################################
     
+            //############################# RayEmployee route ##########################################
+    
+            Route::resource('ray_employee', RayEmployeeController::class);
+
+            //############################# end RayEmployee route ######################################
+    
+
             //############################# single_invoices route ##########################################
     
             Route::view('group_invoices', 'livewire.Group_invoices.index')->name('group_invoices');
