@@ -48,6 +48,10 @@ return [
             'driver' => 'session',
             'provider' => 'doctors',
         ],
+        'ray_employee' => [
+            'driver' => 'session',
+            'provider' => 'ray_employees',
+        ],
     ],
 
     /*
@@ -75,6 +79,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+        'ray_employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\RayEmployee::class,
         ],
         'doctors' => [
             'driver' => 'eloquent',
