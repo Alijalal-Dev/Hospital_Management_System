@@ -52,6 +52,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(DiagnosisRepositoryInterface::class, DiagnosisRepository::class);
         $this->app->bind(RaysRepositoryInterface::class, RaysRepository::class);
         $this->app->bind(LaboratoriesRepositoryInterface::class, LaboratoriesRepository::class);
+
+        //Dashboard_Ray_Employee
+        $this->app->bind('App\Interfaces\Dashboard_Ray_Employee\InvoicesRepositoryInterface',
+            'App\Repository\Dashboard_Ray_Employee\InvoicesRepository');
     }
 
     /**
