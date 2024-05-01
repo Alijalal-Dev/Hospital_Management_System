@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\PatientController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
 use App\Http\Controllers\Dashboard\PaymentAccountController;
 use App\Http\Controllers\Dashboard\RayEmployeeController;
+use App\Http\Controllers\Dashboard\LaboratorieEmployeeController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -138,7 +139,14 @@ Route::group(
             Route::resource('ray_employee', RayEmployeeController::class);
 
             //############################# end RayEmployee route ######################################
-    
+
+                
+            //############################# laboratorie_employee route ##########################################
+
+            Route::resource('laboratorie_employee', LaboratorieEmployeeController::class);
+
+            //############################# end laboratorie_employee route ######################################
+        
 
             //############################# single_invoices route ##########################################
     
