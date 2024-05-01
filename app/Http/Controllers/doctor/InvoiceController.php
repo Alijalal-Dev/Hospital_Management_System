@@ -29,6 +29,12 @@ class InvoiceController extends Controller
         return $this->invoices->completedInvoices();
     }
 
+    //show rays
+    public function show($id)
+    {
+        return $this->invoices->show($id);
+    }
+
 
     public function create()
     {
@@ -41,11 +47,6 @@ class InvoiceController extends Controller
         //
     }
 
-
-    public function show($id)
-    {
-        //
-    }
 
 
     public function edit($id)

@@ -8,4 +8,5 @@ interface InvoicesRepositoryInterface
     public function edit($id);
     public function update($request,$id);
     public function completed_invoices();
+    public function view_rays($id);
 }

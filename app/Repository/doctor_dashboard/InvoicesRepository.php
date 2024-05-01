@@ -3,6 +3,7 @@
 namespace App\Repository\doctor_dashboard;
 use App\Interfaces\doctor_dashboard\InvoicesRepositoryInterface;
 use App\Models\Invoice;
+use App\Models\Ray;
 use Illuminate\Support\Facades\Auth;
 
 class InvoicesRepository implements InvoicesRepositoryInterface
@@ -27,5 +28,15 @@ class InvoicesRepository implements InvoicesRepositoryInterface
     {
         $invoices = Invoice::where('doctor_id', Auth::user()->id)->where('invoice_status', 3)->get();
         return view('Dashboard.Doctor.invoices.completed_invoices', compact('invoices'));
+    }
+
+    public function show($id)
+    {
+        $rays = Ray::findorFail($id);
+        if($rays->doctor_id !=auth()->user()->id){
+            //abort(404);
+            return redirect()->route('404');
+        }
+        return view('Dashboard.Doctor.invoices.view_rays', compact('rays'));
     }
 }

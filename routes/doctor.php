@@ -85,9 +85,13 @@ Route::group(
               //############################# end patientsdetails  route ######################################
   
 
-         
+              Route::get('/404', function () {
+                return view('Dashboard.404');
+            })->name('404');
 
         });
+
+
     });
     require __DIR__ . '/auth.php';
 
