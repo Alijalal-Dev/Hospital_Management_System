@@ -29,7 +29,7 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Ray::count()}}</h4>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Laboratorie::count()}}</h4>
 										</div>
 									</div>
 								</div>
@@ -46,7 +46,7 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Ray::where('case',0)->count()}}</h4>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Laboratorie::where('case',0)->count()}}</h4>
 										</div>
 									</div>
 								</div>
@@ -63,7 +63,7 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Ray::where('case',1)->count()}}</h4>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Laboratorie::where('case',1)->count()}}</h4>
 										</div>
 									</div>
 								</div>
@@ -94,7 +94,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @forelse(\App\Models\Ray::latest()->take(5)->get() as $invoice )
+                                    @forelse(\App\Models\Laboratorie::latest()->take(5)->get() as $invoice )
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td class="tx-right tx-medium tx-inverse">{{$invoice->created_at}}</td>

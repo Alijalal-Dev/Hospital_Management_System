@@ -74,6 +74,7 @@ Route::group(
               //############################# Laboratories route ##########################################
 
             Route::resource('Laboratories', LaboratorieController::class);
+            Route::get('show_laboratorie/{id}', [InvoiceController::class,'showLaboratorie'])->name('show.laboratorie');
 
             //############################# end Laboratories route ######################################
   
