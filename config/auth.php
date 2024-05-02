@@ -52,7 +52,12 @@ return [
             'driver' => 'session',
             'provider' => 'ray_employees',
         ],
+        'laboratorie_employee' => [
+            'driver' => 'session',
+            'provider' => 'laboratorie_employees',
+        ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -87,6 +92,11 @@ return [
         'doctors' => [
             'driver' => 'eloquent',
             'model' => App\Models\Doctor::class,
+        ],
+        
+        'laboratorie_employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\LaboratorieEmployee::class,
         ],
 
         // 'users' => [
