@@ -7,6 +7,7 @@ use App\Models\RayEmployee;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 
+
 class RayEmployeeRepository implements RayEmployeeRepositoryInterface
 {
 

@@ -12,6 +12,7 @@ use App\Models\Invoice;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
+use App\Events\SomeEvent;
 
 class SingleInvoices extends Component
 {
@@ -155,6 +156,13 @@ class SingleInvoices extends Component
                     $fund_accounts->save();
                     $this->InvoiceSaved =true;
                     $this->show_table =true;
+
+                    $data=[
+                        'patient_id'=>$this->patient_id,
+                        'invoice_id'=>$single_invoices->id,
+                    ];
+
+                    event(new SomeEvent($data));
                 }
                 DB::commit();
             }
