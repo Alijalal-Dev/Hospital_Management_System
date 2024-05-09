@@ -167,7 +167,7 @@ class SingleInvoices extends Component
 
                     
                     $notifications = new Notification();
-                    $notifications->username = $this->username;
+                    $notifications->user_id = $this->doctor_id;
                     $patient = Patient::find($this->patient_id);
                     $notifications->message = "كشف جديد : ".$patient->name;
                     $notifications->save();
@@ -176,6 +176,7 @@ class SingleInvoices extends Component
                     $data=[
                         'patient'=>$this->patient_id,
                         'invoice_id'=>$single_invoices->id,
+                        'doctor_id'=>$this->doctor_id,
                     ];
 
                     event(new CreateInvoice($data));
