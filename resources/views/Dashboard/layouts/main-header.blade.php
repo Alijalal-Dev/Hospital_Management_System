@@ -184,25 +184,27 @@
                     <div class="dropdown-menu dropdown-notifications">
                         <div class="menu-header-content bg-primary text-right">
                             <div class="d-flex">
-                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">Notifications</h6>
+                            <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">الاشعارات</h6>
                                 <span
                                     class="badge badge-pill badge-warning mr-auto my-auto float-left">Mark All Read</span>
                             </div>
-                            <p data-count="0" class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 notif-count">0</p>
+                            <p data-count="{{App\Models\Notification::CountNotification(auth()->user()->name)->count()}}" class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 notif-count">{{App\Models\Notification::CountNotification(auth()->user()->name)->count()}}</p>
                         </div>
                         <div class="main-notification-list Notification-scroll">
+                        @foreach(App\Models\Notification::where('username',auth()->user()->name)->where('reader_status',0)->get() as $notification )
                             <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-pink">
                                     <i class="la la-file-alt text-white"></i>
                                 </div>
                                 <div class="mr-3">
-                                    <h5 class="notification-label mb-1">New files available</h5>
-                                    <div class="notification-subtext">10 hour ago</div>
+                                <h5 class="notification-label mb-1">{{$notification->message}}</h5>
+                                    <div class="notification-subtext">{{$notification->created_at}}</div>
                                 </div>
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
                             </a>
+                            @endforeach
                         </div>
                         <div class="dropdown-footer">
                             <a href="">VIEW ALL</a>
@@ -287,14 +289,17 @@
         cluster: 'mt1'
     });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('App\\Events\\SomeEvent', function(data) {
+    var channel = pusher.subscribe('create-invoice');
+    channel.bind('App\\Events\\CreateInvoice', function(data) {
         var existingNotifications = notifications.html();
-        var newNotificationHtml = `<h5 class="notification-label mb-1">`+data.patient_id+`</h5>`;
+        var newNotificationHtml = `
+<h5 class="notification-label mb-1">`+data.message+data.patient+`</h5>
+<div class="notification-subtext">`+data.created_at+`</div>`;
         notifications.html(newNotificationHtml + existingNotifications);
         notificationsCount += 1;
         notificationsCountElem.attr('data-count', notificationsCount);
         notificationsWrapper.find('.notif-count').text(notificationsCount);
-    }); notificationsWrapper.show();
+        notificationsWrapper.show();
+    }); 
 
 </script>
