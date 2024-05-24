@@ -21,10 +21,22 @@ class Createchat extends Component
         $this->auth_email = auth()->user()->email;
     }
 
+    public function render()
+    {
+        if (Auth::guard('patient')->check()) {
+            $this->users = Doctor::all();
+        } else {
+            $this->users = Patient::all();
+        }
+        return view('livewire.chat.createchat');
+    }
+
     public function createConversation($receiver_email)
     {
+        dd($receiver_email);
 
         $chek_Conversation = Conversation::chekConversation($this->auth_email, $receiver_email)->get();
+        dd($chek_Conversation);
         if ($chek_Conversation->isEmpty()) {
             DB::beginTransaction();
             try {
@@ -51,15 +63,5 @@ class Createchat extends Component
             dd('Conversation yes');
         }
 
-    }
-
-    public function render()
-    {
-        if (Auth::guard('patient')->check()) {
-            $this->users = Doctor::all();
-        } else {
-            $this->users = Patient::all();
-        }
-        return view('livewire.chat.createchat')->extends('Dashboard.layouts.master');
     }
 }

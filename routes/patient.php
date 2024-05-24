@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard_Patient\PatientController;
 use App\Livewire\Chat\Createchat;
-
+use Livewire\Livewire;
 /*
 |--------------------------------------------------------------------------
 | doctor Routes
@@ -48,16 +48,22 @@ Route::group(
         Route::get('payments', [PatientController::class,'payments'])->name('payments.patient');
         //############################# end patients route ######################################
 
-        
+
         //############################# Chat route ##########################################
-         Route::get('list/doctors',Createchat::class)->name('list.doctors');
+        Route::get('list/doctors', function () {
+            return view('livewire.chat.chat');
+        })->name('list.doctors');
+
 
         //############################# end Chat route ######################################
 
     });
 
 
+
     require __DIR__ . '/auth.php';
+    Livewire::setUpdateRoute(function ($handle) {
+        return Route::post('/custom/livewire/update', $handle); });
 
 });
 

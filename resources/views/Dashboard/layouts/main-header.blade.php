@@ -29,7 +29,7 @@
                            aria-expanded="false">
                             @if (App::getLocale() == 'ar')
                                 <span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
-                                        src="{{URL::asset('Dashboard/img/flags/egypt_flag.jpg')}}" alt="img"></span>
+                                        alt="img"></span>
                                 <strong
                                     class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
                             @else
@@ -191,7 +191,7 @@
                             <p data-count="{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}" class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 notif-count">{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}</p>
                         </div>
                         <div class="main-notification-list Notification-scroll">
-                            
+
                         <div class="new_message">
                             <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-pink">
@@ -292,9 +292,10 @@
     </div>
 </div>
 <!-- /main-header -->
+<script src="{{asset('build/assets/app-Bp3wlNHf.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-<script src="{{asset('js/app.js')}}"></script>
+
 
 <script>
     var notificationsWrapper   = $('.dropdown-notifications');
@@ -304,7 +305,14 @@
     var new_message = notificationsWrapper.find('.new_message');
     new_message.hide();
 
+    Pusher.logToConsole = true;
+
+        var pusher = new Pusher('467bde2b2b3f02a1e7c3', {
+          cluster: 'mt1'
+        });
+
     Echo.private('create-invoice.{{ auth()->user()->id }}').listen('.create-invoice', (data) => {
+        console.log(data.message);
         var newNotificationHtml = `
        <h4 class="notification-label mb-1">`+data.message+data.patient+`</h4>
        <div class="notification-subtext">`+data.created_at+`</div>`;
@@ -314,6 +322,18 @@
         notificationsCountElem.attr('data-count', notificationsCount);
         notificationsWrapper.find('.notif-count').text(notificationsCount);
         notificationsWrapper.show();
+    });
+     // Close notification dropdown when clicking outside
+     $(document).on('click', function(event) {
+        if (!$(event.target).closest('.dropdown-notifications, .main-header-notification .nav-link').length) {
+            notificationsWrapper.hide();
+        }
+    });
+
+    // Toggle notification dropdown when clicking on the notification icon
+    $('.main-header-notification .nav-link').on('click', function(event) {
+        event.stopPropagation();
+        notificationsWrapper.toggle();
     });
 
 </script>
