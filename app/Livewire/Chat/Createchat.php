@@ -33,10 +33,10 @@ class Createchat extends Component
 
     public function createConversation($receiver_email)
     {
-        dd($receiver_email);
+       /*  dd($receiver_email); */
 
         $chek_Conversation = Conversation::chekConversation($this->auth_email, $receiver_email)->get();
-        dd($chek_Conversation);
+        //dd($chek_Conversation);
         if ($chek_Conversation->isEmpty()) {
             DB::beginTransaction();
             try {

@@ -17,4 +17,9 @@ class Conversation extends Model
             where('sender_email',$receiver_email);
 
     }
+
+    public function messages(){
+
+        return $this->hasMany(Message::class);
+     }
 }
