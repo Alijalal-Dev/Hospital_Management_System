@@ -28,7 +28,7 @@ class Createchat extends Component
         } else {
             $this->users = Patient::all();
         }
-        return view('livewire.chat.createchat');
+        return view('livewire.chat.createchat')->extends('Dashboard.layouts.master');
     }
 
     public function createConversation($receiver_email)

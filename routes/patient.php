@@ -11,6 +11,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard_Patient\PatientController;
 use Livewire\Livewire;
 use App\Livewire\Chat\Main;
+use App\Livewire\Chat\Createchat;
 /*
 |--------------------------------------------------------------------------
 | doctor Routes
@@ -50,9 +51,8 @@ Route::group(
 
 
         //############################# Chat route ##########################################
-        Route::get('list/doctors', function () {
-            return view('livewire.chat.chat');
-        })->name('list.doctors');
+        Route::get('list/doctors',Createchat::class)->name('list.doctors');
+
         Route::get('chat/doctors',Main::class)->name('chat.doctors');
 
 

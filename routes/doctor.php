@@ -8,6 +8,8 @@ use App\Http\Controllers\Dashboard_Doctor\DiagnosticController;
 use App\Http\Controllers\Dashboard_Doctor\RayController;
 use App\Http\Controllers\Dashboard_Doctor\PatientDetailsController;
 use App\Http\Controllers\Dashboard_Doctor\LaboratorieController;
+use App\Livewire\Chat\Createchat;
+use App\Livewire\Chat\Main;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +60,7 @@ Route::group(
                //############################# review_invoices route ##########################################
                Route::post('add_review', [DiagnosticController::class,'addReview'])->name('add_review');
                //############################# end invoices route #############################################
-            
+
             //############################# Diagnostics route ##########################################
 
             Route::resource('Diagnostics', DiagnosticController::class);
@@ -77,14 +79,19 @@ Route::group(
             Route::get('show_laboratorie/{id}', [InvoiceController::class,'showLaboratorie'])->name('show.laboratorie');
 
             //############################# end Laboratories route ######################################
-  
-  
+
+
               //############################# patientsdetails route ##########################################
-  
+
               Route::get('patient_details/{id}', [PatientDetailsController::class,'index'])->name('patient_details');
-  
+
               //############################# end patientsdetails  route ######################################
-  
+
+              //############################# Chat route ##########################################
+              Route::get('list/patients', Createchat::class)->name('list.patients');
+              Route::get('chat/patients', Main::class)->name('chat.patients');
+              //############################# end Chat route ######################################
+
 
               Route::get('/404', function () {
                 return view('Dashboard.404');
