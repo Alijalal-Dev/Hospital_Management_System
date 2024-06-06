@@ -47,6 +47,8 @@ class Chatlist extends Component
         } else {
             $this->dispatch('load-conversation-patient', $payload)->to('chat.chatbox');
         }
+        $this->dispatch('updateMessage',$payload)->to('chat.send-message');
+
     }
 
     public function render()
