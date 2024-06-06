@@ -42,9 +42,17 @@ class SendMessage extends Component
             'receiver_email' => $this->receiverUser->email,
             'body' => $this->body,
         ]);
+        
         $this->selected_conversation->last_time_message = $createdMessage->created_at;
         $this->selected_conversation->save();
         $this->reset('body');
+
+        $payload=['messageId' => $createdMessage->id];
+
+        $this->dispatch('pushMessage', $payload)->to('chat.chatbox');
+        $this->dispatch('refresh')->to('chat.chatlist');
+
+
     }
     public function render()
     {

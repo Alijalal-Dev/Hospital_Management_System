@@ -11,7 +11,8 @@ class Chatbox extends Component
 {
     protected $listeners = [
         'load-conversation-doctor' => 'loadConversationDoctor',
-        'load-conversation-patient' => 'loadConversationPatient'
+        'load-conversation-patient' => 'loadConversationPatient',
+        'pushMessage'
     ];
 
     public $selected_conversation;
@@ -22,6 +23,12 @@ class Chatbox extends Component
     public function mount()
     {
         $this->auth_email = auth()->user()->email;
+    }
+
+    public function pushMessage($payload){
+        $newMessage = Message::find($payload['messageId']);
+        $this->messages->push($newMessage);
+
     }
 
     public function loadConversationDoctor($payload)
