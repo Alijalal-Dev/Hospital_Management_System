@@ -6,23 +6,61 @@ use App\Models\Conversation;
 use App\Models\Doctor;
 use App\Models\Message;
 use App\Models\Patient;
+use Illuminate\Support\Facades\Auth;
 
 class Chatbox extends Component
 {
-    protected $listeners = [
+    /* protected $listeners = [
         'load-conversation-doctor' => 'loadConversationDoctor',
         'load-conversation-patient' => 'loadConversationPatient',
-        'pushMessage'
-    ];
+        'pushMessage',
+        'broadcastMessage'
+    ]; */
 
     public $selected_conversation;
     public $receiverUser;
     public $messages;
     public $auth_email;
-
+    public $auth_id;
+    public $event_name;
+    public $chat_page;
+    public $receiver;
     public function mount()
     {
-        $this->auth_email = auth()->user()->email;
+        if (Auth::guard('patient')->check()) {
+            $this->auth_email = Auth::guard('patient')->user()->email;
+            $this->auth_id = Auth::guard('patient')->user()->id;
+        } else {
+            $this->auth_email = Auth::guard('doctor')->user()->email;
+            $this->auth_id = Auth::guard('doctor')->user()->id;
+        }
+
+    }
+
+    public function getListeners()
+    {
+        if (Auth::guard('patient')->check()) {
+            $auth_id = Auth::guard('patient')->user()->id;
+            $this->event_name = "MessageSent2";
+            $this->chat_page = "chat2";
+
+        } else {
+            $auth_id = Auth::guard('doctor')->user()->id;
+            $this->event_name = "MessageSent";
+            $this->chat_page = "chat";
+        }
+
+        return [
+            "echo-private:$this->chat_page.{$auth_id},$this->event_name" => 'broadcastMessage', 'loadConversationPatient', 'loadConversationDoctor', 'pushMessage'
+        ];
+    }
+
+    public function broadcastMessage($event)
+    {
+        $broadcastMessage = Message::find($event['message']);
+        $broadcastMessage->read = 1;
+        $payload=['messageId' => $broadcastMessage->id];
+        $this->pushMessage($payload);
     }
 
     public function pushMessage($payload){
