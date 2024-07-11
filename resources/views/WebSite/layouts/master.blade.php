@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     @include('WebSite.layouts.style')
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body>
@@ -197,6 +198,7 @@
 </div>
 
 @include('WebSite.layouts.scripts')
+@livewireScripts
 
 </body>
 </html>
