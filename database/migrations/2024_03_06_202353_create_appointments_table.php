@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->text('notes');
+            $table->enum('type',['غير مؤكد','مؤكد','منتهي'])->default('غير مؤكد');
+            $table->dateTime('appointment')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
