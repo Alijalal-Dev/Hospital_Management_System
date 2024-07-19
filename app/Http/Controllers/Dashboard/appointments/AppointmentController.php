@@ -7,6 +7,7 @@ use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AppointmentConfirmation;
+use Twilio\Rest\Client;
 
 class AppointmentController extends Controller
 {
@@ -28,7 +29,21 @@ class AppointmentController extends Controller
             'type'=>'مؤكد',
             'appointment'=>$request->appointment
         ]);
-        Mail::to($appointment->email)->send(new AppointmentConfirmation($appointment->name,$appointment->appointment));
+         // send email
+         Mail::to($appointment->email)->send(new AppointmentConfirmation($appointment->name,$appointment->appointment));
+
+         // send message mob
+         $receiverNumber = $appointment->phone;
+         $message = "عزيزي المريض" . " " . $appointment->name . " " . "تم حجز موعدك بتاريخ " . $appointment->appointment;
+
+         $account_sid = getenv("TWILIO_SID");
+         $auth_token = getenv("TWILIO_TOKEN");
+         $twilio_number = getenv("TWILIO_FROM");
+         $client = new Client($account_sid, $auth_token);
+         $client->messages->create($receiverNumber,[
+             'from' => $twilio_number,
+             'body' => $message
+         ]);
         session()->flash('add');
         return back();
     }
