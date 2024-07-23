@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->string('phone');
             $table->boolean('status')->default(1);
+            $table->integer('number_of_statements');
             $table->timestamps();
         });
     }

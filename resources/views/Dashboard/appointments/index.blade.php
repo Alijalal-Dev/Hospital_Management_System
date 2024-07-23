@@ -24,6 +24,12 @@
 @section('content')
     @include('Dashboard.messages_alert')
     <!-- row opened -->
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="row row-sm">
         <!--div-->
         <div class="col-xl-12">

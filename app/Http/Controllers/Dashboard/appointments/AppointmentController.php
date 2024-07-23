@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard\appointments;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AppointmentConfirmation;
@@ -35,6 +36,34 @@ class AppointmentController extends Controller
     public function approval(Request $request, $id)
     {
         $appointment = Appointment::findorFail($id);
+
+        // Format the appointment date for comparison
+        $appointment_date = date('Y-m-d', strtotime($request->appointment));
+        
+        $appointment_count = Appointment::where('doctor_id', $appointment->doctor_id)
+            ->whereDate('appointment', $appointment_date)
+            ->where('type', 'مؤكد')->count();
+
+        $doctor_info = Doctor::find($appointment->doctor_id);
+
+        //dd($appointment_count,$doctor_info);
+
+        if ($appointment_count >= $doctor_info->number_of_statements) {
+            session()->flash('error', "No more appointments available for this day.");
+            return back();
+        }
+
+        // Check if the date already exists for this doctor
+        $existingAppointment = Appointment::where('doctor_id', $appointment->doctor_id)
+            ->where('appointment', $request->appointment)
+            ->where('type', 'مؤكد')
+            ->first();
+
+        if ($existingAppointment) {
+            session()->flash('error', "This appointment date is already taken.");
+            return back();
+        }
+
         $appointment->update([
             'type' => 'مؤكد',
             'appointment' => $request->appointment
