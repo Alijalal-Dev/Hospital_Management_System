@@ -42,11 +42,11 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctors->password = Hash::make($request->password);
             $doctors->section_id = $request->section_id;
             $doctors->phone = $request->phone;
+            $doctors->number_of_statements = $request->number_of_statements;
             $doctors->status = 1;
             $doctors->save();
             // store trans
             $doctors->name = $request->name;
-            $doctors->doctorappointments()->sync($request->appointments);
             $doctors->save();
 
 
@@ -76,13 +76,13 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctor->email = $request->email;
             $doctor->section_id = $request->section_id;
             $doctor->phone = $request->phone;
+            $doctor->number_of_statements = $request->number_of_statements;
             $doctor->save();
             // store trans
             $doctor->name = $request->name;
             $doctor->save();
 
-            // update pivot tABLE
-            $doctor->doctorappointments()->sync($request->appointments);
+
 
             // update photo
             if ($request->has('photo')) {
@@ -139,9 +139,8 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function edit($id)
     {
         $sections = Section::all();
-        $appointments = Appointment::all();
         $doctor = Doctor::findorfail($id);
-        return view('Dashboard.Doctors.edit', compact('sections', 'appointments', 'doctor'));
+        return view('Dashboard.Doctors.edit', compact('sections','doctor'));
     }
 
     public function update_password($request)

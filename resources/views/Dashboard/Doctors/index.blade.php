@@ -54,7 +54,7 @@
                                 <th>{{trans('doctors.email')}}</th>
                                 <th>{{trans('doctors.section')}}</th>
                                 <th>{{trans('doctors.phone')}}</th>
-                                <th>{{trans('doctors.appointments')}}</th>
+                                <th>عدد الكشوفات اليومية</th>
                                 <th>{{trans('doctors.Status')}}</th>
                                 <th>{{trans('doctors.created_at')}}</th>
                                 <th>{{trans('doctors.Processes')}}</th>
@@ -81,11 +81,7 @@
                                     <td>{{ $doctor->email }}</td>
                                     <td>{{ $doctor->section->name}}</td>
                                     <td>{{ $doctor->phone}}</td>
-                                    <td>
-                                        @foreach($doctor->doctorappointments as $appointment)
-                                            {{$appointment->name}}
-                                        @endforeach
-                                    </td>
+                                    <td>{{ $doctor->number_of_statements}}</td>
                                     <td>
                                         <div
                                             class="dot-label bg-{{$doctor->status == 1 ? 'success':'danger'}} ml-1"></div>

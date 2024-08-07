@@ -74,6 +74,16 @@
                                 </div>
                             </div>
 
+                            <div class="row row-xs align-items-center mg-b-20">
+                                <div class="col-md-1">
+                                    <label for="exampleInputEmail1">
+                                        عدد الكشوفات اليومية</label>
+                                </div>
+                                <div class="col-md-11 mg-t-5 mg-md-t-0">
+                                    <input class="form-control" name="number_of_statements" autofocus type="text">
+                                </div>
+                            </div>
+
 
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
@@ -92,26 +102,7 @@
 
                             </div>
 
-                            <div class="row row-xs align-items-center mg-b-20">
-                                <div class="col-md-1">
-                                    <label for="exampleInputEmail1">
-                                        {{trans('doctors.appointments')}}</label>
-                                </div>
 
-                                <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <select multiple="multiple" class="testselect2" name="appointments[]">
-                                        <option selected value="" selected disabled>-- حدد المواعيد --</option>
-                                        @foreach($appointments as $appointment)
-                                            <option value="{{$appointment->id}}">{{$appointment->name}}</option>
-                                        @endforeach
-                                        
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
