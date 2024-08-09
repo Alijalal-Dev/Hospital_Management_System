@@ -16,6 +16,7 @@ use App\Http\Controllers\Dashboard\LaboratorieEmployeeController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\appointments\AppointmentController;
+use App\Http\Controllers\Dashboard\HomeController;
 
 
 
@@ -166,6 +167,8 @@ Route::group(
             Route::get('appointments/finished',[AppointmentController::class,'index3'])->name('appointments.index3');
             Route::delete('appointments/destroy/{id}',[AppointmentController::class,'destroy'])->name('appointments.destroy');
 
+            //appointment charts
+            Route::get('/dashboard/admin', [HomeController::class, 'index'])->name('dashboard.admin');
 
         });
 
