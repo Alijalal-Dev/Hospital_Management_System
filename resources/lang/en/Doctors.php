@@ -8,7 +8,7 @@ return array (
   'Status' => 'Status',
   'Status_change' => 'Status Change',
   'add_doctor' => 'Add Doctor',
-  'appointments' => 'appointments',
+  'number_of_statements' => 'number of statements',
   'confirm_password' => 'Confirm Password',
   'created_at' => 'created_at',
   'delete_doctor' => 'Delete Doctor',

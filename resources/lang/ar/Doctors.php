@@ -8,7 +8,7 @@ return array (
   'Status' => 'الحالة',
   'Status_change' => 'تغير الحالة',
   'add_doctor' => 'اضافة طبيب',
-  'appointments' => 'المواعيد',
+  'number_of_statements' => 'عدد الكشوفات اليومية',
   'confirm_password' => 'تاكيد كلمة المرور',
   'created_at' => 'تاريخ الاضافة',
   'delete_doctor' => 'حذف طبيب',

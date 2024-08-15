@@ -58,8 +58,8 @@
                                                    <td>{{ \Str::limit($section->description, 20) }}</td>
                                                    <td>{{ $section->created_at->diffForHumans() }}</td>
                                                    <td>
-                                                       <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$section->id}}"><i class="las la-pen"></i></a>
-                                                       <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$section->id}}"><i class="las la-trash"></i></a>
+                                                       <a class="modal-effect btn btn-sm btn-primary" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$section->id}}"><i class="fa fa-edit"></i></a>
+                                                       <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$section->id}}"><i class="fa fa-trash"></i></a>
                                                    </td>
                                                </tr>
 
