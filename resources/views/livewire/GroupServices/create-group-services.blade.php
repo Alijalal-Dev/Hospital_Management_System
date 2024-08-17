@@ -14,20 +14,20 @@
     <form wire:submit.prevent="saveGroup" autocomplete="off">
         @csrf
         <div class="form-group">
-            <label>اسم المجموعة</label>
+            <label>{{trans('Services.group_name_group_services')}}</label>
             <input wire:model="name_group" type="text" name="name_group" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label>ملاحظات</label>
+            <label>{{trans('Services.group_description_group_services')}}</label>
             <textarea wire:model="notes" name="notes" class="form-control" rows="5"></textarea>
         </div>
 
         <div class="card mt-4">
             <div class="card-header">
                 <div class="col-md-12">
-                    <button class="btn btn-outline-primary"
-                            wire:click.prevent="addService">اضافة خدمة فرعية
+                    <button class="btn btn-primary"
+                            wire:click.prevent="addService">{{trans('Services.group_add_sub_service_group_services')}}
                     </button>
                 </div>
             </div>
@@ -38,9 +38,9 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr class="table-primary">
-                            <th>اسم الخدمة</th>
-                            <th width="200">العدد</th>
-                            <th width="200">العمليات</th>
+                            <th>{{trans('Services.group_service_name_group_services')}}</th>
+                            <th width="200">{{trans('Services.group_service_number_group_services')}}</th>
+                            <th width="200">{{trans('Services.group_service_processes_group_services')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -87,16 +87,16 @@
                                     @if($groupItem['is_saved'])
                                         <button class="btn btn-sm btn-primary"
                                                 wire:click.prevent="editService({{$index}})">
-                                            تعديل
+                                                {{trans('Services.group_service_update_button_group_services')}}
                                         </button>
                                     @else
                                         <button class="btn btn-sm btn-success mr-1"
                                                 wire:click.prevent="saveService({{$index}})">
-                                            تاكيد
+                                                {{trans('Services.group_service_validate_button_group_services')}}
                                         </button>
                                     @endif
                                     <button class="btn btn-sm btn-danger"
-                                            wire:click.prevent="removeService({{$index}})">حذف
+                                            wire:click.prevent="removeService({{$index}})">{{trans('Services.group_service_delete_button_group_services')}}
                                     </button>
                                 </td>
                             </tr>
@@ -109,31 +109,31 @@
                 <div class="col-lg-4 ml-auto text-right">
                     <table class="table pull-right">
                         <tr>
-                            <td style="color: red">الاجمالي</td>
+                            <td style="color: red">{{trans('Services.group_Total_group_services')}}</td>
                             <td>{{ number_format($subtotal, 2) }}</td>
                         </tr>
 
                         <tr>
-                            <td style="color: red">قيمة الخصم</td>
+                            <td style="color: red">{{trans('Services.group_Discount_group_services')}}</td>
                             <td width="125">
                                 <input type="number" name="discount_value" class="form-control w-75 d-inline" wire:model="discount_value" wire:change="calculateTotal">
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="color: red">نسبة الضريبة</td>
+                            <td style="color: red">{{trans('Services.group_tax_group_services')}}</td>
                             <td>
                                 <input type="number" name="taxes" class="form-control w-75 d-inline" min="0" max="100" wire:model="taxes" wire:change="calculateTotal"> %
                             </td>
                         </tr>
                         <tr>
-                            <td style="color: red">الاجمالي مع الضريبة</td>
+                            <td style="color: red">{{trans('Services.group_total_tax_group_services')}}</td>
                             <td>{{ number_format($total, 2) }}</td>
                         </tr>
                     </table>
                 </div> <br/>
                 <div>
-                    <input class="btn btn-outline-success" type="submit" value="تاكيد البيانات">
+                    <input class="btn btn-success" type="submit" value=" {{trans('Services.group_confirm_group_services')}}">
                 </div>
             </div>
         </div>

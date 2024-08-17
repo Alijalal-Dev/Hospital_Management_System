@@ -38,7 +38,7 @@
                     <div class="table-responsive">
                         <table class="table text-md-nowrap text-center" id="example1">
                             <thead>
-                            <tr class="table-secondary">
+                            <tr>
                                 <th>#</th>
                                 <th >{{trans('insurance.Company_code')}}</th>
                                 <th >{{trans('insurance.Company_name')}}</th>
