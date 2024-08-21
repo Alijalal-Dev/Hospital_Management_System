@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'add_new_ambulance' => 'Add New Ambulance',
+    'car_number' => 'Car Number',
+    'car_model' => 'Car Model',
+    'manufacture_year' => 'Year of Manufacture',
+    'car_type' => 'Car Type',
+    'driver_name' => 'Driver Name',
+    'license_number' => 'License Number',
+    'phone_number' => 'Phone Number',
+    'car_status' => 'Car Status',
+    'notes' => 'Notes',
+    'actions' => 'Actions',
+    'ambulance' => 'Ambulance',
+    'ambulance_cars' => 'Ambulance Cars',
+    'save_data' => 'Save Data',
+    'owned' => 'Owned',
+    'rented' => 'Rented',
+    'activation_status' => 'Activation Status',
+    'delete_ambulance' => 'Delete Ambulance Data',
+    'confirm_delete' => 'Are you sure you want to delete this ambulance\'s data?',
+    'close' => 'Close',
+    'delete' => 'Delete',
+];

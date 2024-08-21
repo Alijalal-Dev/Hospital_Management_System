@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'add_new_ambulance' => 'اضافة سيارة جديدة',
+    'car_number' => 'رقم السيارة',
+    'car_model' => 'موديل السيارة',
+    'manufacture_year' => 'سنة الصنع',
+    'car_type' => 'نوع السيارة',
+    'driver_name' => 'اسم السائق',
+    'license_number' => 'رقم الرخصة',
+    'phone_number' => 'رقم الهاتف',
+    'car_status' => 'حالة السيارة',
+    'notes' => 'ملاحظات',
+    'actions' => 'العمليات',
+    'ambulance' => 'الاسعاف',
+    'ambulance_cars' => 'سيارات الاسعاف',
+    'save_data' => 'حفظ البيانات',
+    'owned' => 'مملوكة',
+    'rented' => 'ايجار',
+    'activation_status' => 'حالة التفعيل',
+    'delete_ambulance' => 'حذف بيانات سيارة اسعاف',
+    'confirm_delete' => 'هل انت متأكد من حذف بيانات السيارة؟',
+    'close' => 'إغلاق',
+    'delete' => 'حذف',
+];
