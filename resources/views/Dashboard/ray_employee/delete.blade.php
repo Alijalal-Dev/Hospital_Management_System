@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">حذف بيانات موظف</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ trans('ray.delete_employee') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,7 +17,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Dashboard/sections_trans.Close')}}</button>
-                <button type="submit" class="btn btn-danger">{{trans('Dashboard/sections_trans.submit')}}</button>
+                <button type="submit" class="btn btn-success">{{trans('Dashboard/sections_trans.submit')}}</button>
             </div>
             </form>
         </div>

@@ -64,7 +64,6 @@
                 <i class="fas fa-x-ray fa-lg" style="color: #828997;"></i>&nbsp;&nbsp;&nbsp;<span class="side-menu__label">{{ trans('main-sidebar_trans.Rays') }}</span><i class="angle fe fe-chevron-down"></i></a>
             <ul class="slide-menu">
                 <li><a class="slide-item" href="{{ route('ray_employee.index') }}"> {{ trans('main-sidebar_trans.Rays_employee_List') }}</a></li>
-                <li><a class="slide-item" href="{{ url('/' . $page='form-advanced') }}"> {{ trans('main-sidebar_trans.Rays_List') }}</a></li>
             </ul>
         </li>
         <li class="slide">
