@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'title' => 'Payment Vouchers',
+    'accounts' => 'Accounts',
+    'payment_vouchers' => 'Payment Vouchers',
+    'add_new_payment_voucher' => 'Add New Payment Voucher',
+    'patient_name' => 'Patient Name',
+    'amount' => 'Amount',
+    'description' => 'Description',
+    'date_added' => 'Date Added',
+    'actions' => 'Actions',
+    'print_payment_voucher' => 'Print Payment Voucher',
+    'edit_payment_voucher' => 'Edit Payment voucher',
+    //
+    'payment_voucher' => 'Payment Voucher',
+    'print_voucher' => 'Print Voucher',
+    'hospital_management_program' => 'Hospital Management Program',
+    'address' => '201 Engineers',
+    'tel_no' => 'Tel No: 011111111',
+    'email' => 'Email: Hospital@gmail.com',
+    'voucher_info' => 'Voucher Information',
+    'issue_date' => 'Issue Date',
+    'notes' => 'Notes',
+    'print' => 'Print',
+    'delete_voucher' => 'Delete Payment Voucher',
+    'warning_message' => 'Are you sure you want to delete the voucher for patient',
+    'close' => 'Close',
+    'submit' => 'Confirm Deletion',
+];

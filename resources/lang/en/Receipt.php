@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'title' => 'Receipts',
+    'accounts' => 'Accounts',
+    'add_new_receipt' => 'Add New Receipt',
+    'patient_name' => 'Patient Name',
+    'amount' => 'Amount',
+    'description' => 'Description',
+    'date_added' => 'Date Added',
+    'actions' => 'Actions',
+    'print_receipt' => 'Print Receipt',
+     'submit' => 'confirm',
+     'title_edit' => 'Edit Receipt',
+     'title_delete' => 'Delete Receipt',
+     'warning' => 'Are you sure you want to delete this receipt?',
+     'close' => 'Close',
+    //
+    'title_print' => 'Print Preview',
+    'breadcrumb_main' => 'Receipt',
+    'breadcrumb_sub' => 'Print Receipt',
+    'invoice_title' => 'Receipt',
+    'program_name' => 'Hospital Management Program',
+    'program_address' => 'Boulevard Anfa Casablanca',
+    'program_tel' => 'Tel No: +212611111111',
+    'program_email' => 'Email:  Admin@gmail.com',
+    'receipt_info' => 'Receipt Information',
+    'issue_date' => 'Issue Date',
+    'notes' => 'Notes',
+    'print_button' => 'Print',
+];

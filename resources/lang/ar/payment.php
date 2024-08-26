@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'title' => 'سندات الصرف',
+    'accounts' => 'الحسابات',
+    'payment_vouchers' => 'سندات الصرف',
+    'add_new_payment_voucher' => 'اضافة سند جديد',
+    'patient_name' => 'اسم المريض',
+    'amount' => 'المبلغ',
+    'description' => 'البيان',
+    'date_added' => 'تاريخ الاضافة',
+    'actions' => 'العمليات',
+    'print_payment_voucher' => 'طباعه سند صرف',
+    'edit_payment_voucher' => 'تعديل سند صرف',
+    //
+    'payment_voucher' => 'سند صرف',
+    'print_voucher' => 'طباعه سند',
+    'hospital_management_program' => 'برنامج ادراه المستشفي',
+    'address' => 'شارع أنفا الدار البيضاء',
+    'tel_no' => 'رقم الهاتف: 0611111111',
+    'email' => 'البريد الإلكتروني: Admin@gmail.com',
+    'voucher_info' => 'معلومات السند',
+    'issue_date' => 'تاريخ الاصدار',
+    'notes' => 'ملاحظات',
+    'print' => 'طباعة',
+    'delete_voucher' => 'حذف سند صرف',
+    'warning_message' => 'هل أنت متأكد من أنك تريد حذف السند الخاص بالمريض',
+    'close' => 'إغلاق',
+    'submit' => 'تأكيد الحذف',
+];
