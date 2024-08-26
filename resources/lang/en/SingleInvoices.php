@@ -40,7 +40,6 @@ return array(
   'doctor' => 'Doctor',
   'total' => 'Total',
   'adress' => 'Boulevard Anfa Casablanca',
-
-
-
+  //
+  'group_invoice_title' => 'Group services invoice',
 );

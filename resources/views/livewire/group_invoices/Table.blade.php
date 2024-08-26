@@ -1,21 +1,21 @@
-<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button">اضافة فاتورة جديدة </button><br><br>
+<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button">{{ trans('SingleInvoices.add_new_invoice') }}</button><br><br>
 <div class="table-responsive">
     <table class="table text-md-nowrap" id="example1" data-page-length="50"style="text-align: center">
         <thead>
         <tr>
-            <th>#</th>
-            <th>اسم الخدمة</th>
-            <th>اسم المريض</th>
-            <th>تاريخ الفاتورة</th>
-            <th>اسم الدكتور</th>
-            <th>القسم</th>
-            <th>سعر الخدمة</th>
-            <th>قيمة الخصم</th>
-            <th>نسبة الضريبة</th>
-            <th>قيمة الضريبة</th>
-            <th>الاجمالي مع الضريبة</th>
-            <th>نوع الفاتورة</th>
-            <th>العمليات</th>
+            <th>{{ trans('SingleInvoices.number') }}</th>
+            <th>{{ trans('SingleInvoices.service_name') }}</th>
+            <th>{{ trans('SingleInvoices.patient_name') }}</th>
+            <th>{{ trans('SingleInvoices.invoice_date') }}</th>
+            <th>{{ trans('SingleInvoices.doctor_name') }}</th>
+            <th>{{ trans('SingleInvoices.section') }}</th>
+            <th>{{ trans('SingleInvoices.service_price') }}</th>
+            <th>{{ trans('SingleInvoices.discount_value') }}</th>
+            <th>{{ trans('SingleInvoices.tax_rate') }}%</th>
+            <th>{{ trans('SingleInvoices.tax_value') }}</th>
+            <th>{{ trans('SingleInvoices.total_with_tax') }}</th>
+            <th>{{ trans('SingleInvoices.invoice_type') }}</th>
+            <th>{{ trans('SingleInvoices.actions') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
                 <td>
                     <button wire:click="edit({{ $group_invoice->id }})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_invoice" wire:click="delete({{ $group_invoice->id }})" ><i class="fa fa-trash"></i></button>
-                    <a href="#"  wire:click="print({{ $group_invoice->id }})" class="btn btn-primary btn-sm" target="_blank" title="طباعه سند صرف"><i class="fas fa-print"></i></a>
+                    <a href="#"  wire:click="print({{ $group_invoice->id }})" class="btn btn-success btn-sm" target="_blank" title="طباعه سند صرف"><i class="fas fa-print"></i></a>
                 </td>
             </tr>
 

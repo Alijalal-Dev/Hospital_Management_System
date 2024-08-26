@@ -36,9 +36,9 @@
                 <td>{{ number_format($single_invoice->total_with_tax, 2) }}</td>
                 <td>{{ $single_invoice->type == 1 ? trans('SingleInvoices.cash') : trans('SingleInvoices.credit') }}</td>
                 <td>
-                    <button wire:click="edit({{ $single_invoice->id }})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> {{ trans('SingleInvoices.edit') }}</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_invoice" wire:click="delete({{ $single_invoice->id }})"><i class="fa fa-trash"></i> {{ trans('SingleInvoices.delete') }}</button>
-                    <button wire:click="print({{ $single_invoice->id }})" class="btn btn-primary btn-sm"><i class="fas fa-print"></i> {{ trans('SingleInvoices.print') }}</button>
+                    <button wire:click="edit({{ $single_invoice->id }})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> </button>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_invoice" wire:click="delete({{ $single_invoice->id }})"><i class="fa fa-trash"></i></button>
+                    <button wire:click="print({{ $single_invoice->id }})" class="btn btn-success btn-sm"><i class="fas fa-print"></i> </button>
                 </td>
             </tr>
         @endforeach
