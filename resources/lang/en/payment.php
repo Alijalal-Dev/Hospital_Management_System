@@ -26,5 +26,5 @@ return [
     'delete_voucher' => 'Delete Payment Voucher',
     'warning_message' => 'Are you sure you want to delete the voucher for patient',
     'close' => 'Close',
-    'submit' => 'Confirm Deletion',
+    'submit' => 'Confirm',
 ];
