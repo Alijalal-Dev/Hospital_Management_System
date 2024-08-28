@@ -22,7 +22,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">{{ trans('insurance.close') }}</button>
-                        <button class="btn btn-danger">تأكيد الحذف</button>
+                        <button class="btn btn-danger">{{ trans('appointment.submit') }}</button>
                     </div>
                 </form>
             </div>
