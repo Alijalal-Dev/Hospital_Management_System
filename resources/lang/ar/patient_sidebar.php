@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'medical_records' => 'السجلات الطبية',
+    'prescriptions' => 'الوصفات الطبية',
+    'messages' => 'المحادثات',
+    'profile' => 'الملف الشخصي',
+    'logout' => 'تسجيل الخروج',
+    'invoices' => 'قائمة الفواتير',
+    'laboratories' => 'المختبر',
+    'rays' => 'الأشعة',
+    'doctors_list' => 'قائمة الأطباء',
+    'recent_chats' => 'المحادثات الأخيرة',
+    'dashboard' => 'لوحة تحكم المريض',
+    'welcome_back' => 'مرحبا بعودتك مرة اخرى',
+    'total_invoices' => 'إجمالي عدد الفواتير',
+    'total_payments' => 'إجمالي المدفوعات',
+    'last_5_invoices' => 'آخر 5 فواتير على النظام',
+    'invoice_date' => 'تاريخ الفاتورة',
+    'patient_name' => 'اسم المريض',
+    'doctor_name' => 'اسم الطبيب',
+    'amount_due' => 'المطلوب',
+    'invoice_status' => 'حالة الفاتورة',
+    'in_progress' => 'تحت الإجراء',
+    'completed' => 'مكتملة',
+    'no_data' => 'لاتوجد بيانات',
+];

@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'medical_records' => 'Medical Records',
+    'prescriptions' => 'Prescriptions',
+    'messages' => 'Messages',
+    'profile' => 'Profile',
+    'logout' => 'Logout',
+    'invoices' => 'Invoices List',
+    'laboratories' => 'Laboratories',
+    'rays' => 'Radiology',
+    'doctors_list' => 'Doctors List',
+    'recent_chats' => 'Recent Chats',
+    'dashboard' => 'Patient Dashboard',
+    'welcome_back' => 'Welcome back',
+    'total_invoices' => 'Total Invoices',
+    'total_payments' => 'Total Payments',
+    'last_5_invoices' => 'Last 5 Invoices on the System',
+    'invoice_date' => 'Invoice Date',
+    'patient_name' => 'Patient Name',
+    'doctor_name' => 'Doctor Name',
+    'amount_due' => 'Amount Due',
+    'invoice_status' => 'Invoice Status',
+    'in_progress' => 'In Progress',
+    'completed' => 'Completed',
+    'no_data' => 'No Data Available',
+];
