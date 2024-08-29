@@ -1,0 +1,22 @@
+<?php
+return [
+    'Laboratory Staff Dashboard' => 'لوحة تحكم موظفي المختبر',
+    'Welcome Back' => 'مرحبا بعودتك مرة اخري ',
+    'Total Invoices' => 'اجمالي عدد الفواتير',
+    'Pending Invoices' => 'اجمالي عدد الفواتير تحت الاجراء',
+    'Completed Invoices' => 'اجمالي عدد الفواتير المكتملة',
+    'Last 5 Invoices' => 'اخر 5 فواتير علي النظام',
+    'Invoice Date' => 'تاريخ الفاتورة',
+    'Patient Name' => 'اسم المريض',
+    'Doctor Name' => 'اسم الطبيب',
+    'Required' => 'الاجراء المطلوب',
+    'Invoice Status' => 'حالة الفاتورة',
+    'Pending' => 'قيد الاجراء',
+    'Completed' => 'مكتمل',
+    'No Data Available' => 'لا توجد بيانات متاحة',
+    'Main' => 'الرئيسية',
+    'index' => 'برنامج إدارة المستشفيات',
+    'Radiology Reports' => 'كشوفات المختبر',
+    'Reports List' => 'قائمة الكشوفات',
+    'Completed Reports List' => 'قائمة الكشوفات المكتملة',
+];

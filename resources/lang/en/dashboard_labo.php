@@ -1,0 +1,22 @@
+<?php
+return [
+    'Laboratory Staff Dashboard' => 'Laboratory Staff Dashboard',
+    'Welcome Back' => 'Welcome back, ',
+    'Total Invoices' => 'Total Invoices',
+    'Pending Invoices' => 'Pending Invoices',
+    'Completed Invoices' => 'Completed Invoices',
+    'Last 5 Invoices' => 'Last 5 Invoices',
+    'Invoice Date' => 'Invoice Date',
+    'Patient Name' => 'Patient Name',
+    'Doctor Name' => 'Doctor Name',
+    'Required' => 'Required',
+    'Invoice Status' => 'Invoice Status',
+    'Pending' => 'Pending',
+    'Completed' => 'Completed',
+    'No Data Available' => 'No Data Available',
+    'Main' => 'Main',
+    'index' => 'Hospital Management Software',
+    'Radiology Reports' => 'Laboratory Reports',
+    'Reports List' => 'Reports List',
+    'Completed Reports List' => 'Completed Reports List',
+];
