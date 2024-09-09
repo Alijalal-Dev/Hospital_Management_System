@@ -14,14 +14,13 @@
                             <!-- Content Column -->
                             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
-                                    <h2>شريكك الصحي الأكثر ثقة مدى الحياة</h2>
+                                    <h2> {{ trans('frontend.title') }}</h2>
                                     <div class="text">
-                                        نحن نقدم استشارات مجانية وأفضل إدارة مشروع لك
-                                        الأفكار ، 100٪ التسليم مضمون
+                                        {{ trans('frontend.title2') }}
                                     </div>
                                     <div class="btn-box">
-                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">المواعيد</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">الخدمات</a>
+                                        <a href="#appointment-form" class="theme-btn services-btn"><span
+                                                class="txt">{{ trans('frontend.book_appointment') }}</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +29,7 @@
                             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
                                     <div class="image">
-                                        <img src="{{URL::asset('WebSite/images/main-slider/3.png')}}" alt=""/>
+                                        <img src="{{ URL::asset('WebSite/images/main-slider/3.png') }}" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -40,76 +39,8 @@
                     </div>
                 </div>
 
-
-                <div class="swiper-slide slide">
-                    <div class="auto-container">
-                        <div class="row clearfix">
-
-                            <!-- Content Column -->
-                            <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-column">
-                                    <h2>Your Most Trusted Health Partner For Life.</h2>
-                                    <div class="text">We offer free consulting and the best project management for your
-                                        ideas, 100% delivery guaranteed.
-                                    </div>
-                                    <div class="btn-box">
-                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">Appointment</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">Services</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Image Column -->
-                            <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-column">
-                                    <div class="image">
-                                        <img src="{{URL::asset('WebSite/images/main-slider/3.jpg')}}" alt=""/>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <div class="swiper-slide slide">
-                    <div class="auto-container">
-                        <div class="row clearfix">
-
-                            <!-- Content Column -->
-                            <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-column">
-                                    <h2>Your Most Trusted Health Partner For Life.</h2>
-                                    <div class="text">We offer free consulting and the best project management for your
-                                        ideas, 100% delivery guaranteed.
-                                    </div>
-                                    <div class="btn-box">
-                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">Appointment</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">Services</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Image Column -->
-                            <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-column">
-                                    <div class="image">
-                                        <img src="{{URL::asset('WebSite/images/main-slider/3.jpg')}}" alt=""/>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </section>
     <!-- End Main Slider -->
@@ -127,12 +58,11 @@
                             <div class="border-line"></div>
                             <!-- Sec Title -->
                             <div class="sec-title">
-                                <h2>من نحن <br> الريادة في الصحة</h2>
+                                <h2>{{ trans('frontend.about') }}</h2>
                                 <div class="separator"></div>
                             </div>
-                            <div class="text">أين أنت في قلب مهمتنا. نأمل أن تعتبرنا منزلك الطبي - المكان الذي تشعر فيه بالأمان والراحة والرعاية. كمجموعة طبية متعددة التخصصات
+                            <div class="text">{{ trans('frontend.description') }}&nbsp;&nbsp;&nbsp;
                             </div>
-                            <a href="about.html" class="theme-btn btn-style-one"><span class="txt">المزيد عنا</span></a>
                         </div>
                     </div>
 
@@ -140,7 +70,7 @@
                     <div class="image-column col-lg-5 col-md-12 col-sm-12">
                         <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="image">
-                                <img src="{{URL::asset('WebSite/images/resource/image-3.jpg')}}" alt=""/>
+                                <img src="{{ URL::asset('WebSite/images/imageweb1.jpg') }}" alt="" />
                             </div>
                         </div>
                     </div>
@@ -162,9 +92,8 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon flaticon-doctor-stethoscope"></div>
-                            <h3><a href="#">العلاج الطبي</a></h3>
+                            <h3><a href="#">{{ trans('frontend.Medical Treatment') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
                     </div>
                 </div>
 
@@ -173,9 +102,8 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon flaticon-ambulance-side-view"></div>
-                            <h3><a href="#">مساعدة الطوارئ</a></h3>
+                            <h3><a href="#">{{ trans('frontend.Emergency Assistance') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
                     </div>
                 </div>
 
@@ -184,9 +112,8 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon fas fa-user-md"></div>
-                            <h3><a href="#">أطباء مؤهلين</a></h3>
+                            <h3><a href="#"> {{ trans('frontend.Qualified Doctors') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
                     </div>
                 </div>
 
@@ -195,9 +122,8 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="750ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon fas fa-briefcase-medical"></div>
-                            <h3><a href="#">محترفين طبيا</a></h3>
+                            <h3><a href="#">{{ trans('frontend.Medical Professionals') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
                     </div>
                 </div>
 
@@ -205,6 +131,9 @@
         </div>
     </section>
     <!-- End Featured Section -->
+    @php
+         $sections = \App\Models\Section::with('doctors')->get();
+    @endphp
 
     <!-- Department Section Three -->
     <section class="department-section-three">
@@ -217,198 +146,51 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <!-- Sec Title -->
                         <div class="sec-title light">
-                            <h2>الاقسام</h2>
+                            <h2>{{ trans('frontend.sections') }}</h2>
                             <div class="separator"></div>
                         </div>
                         <!--Tab Btns-->
                         <ul class="tab-btns tab-buttons clearfix">
-                            <li data-tab="#tab-urology" class="tab-btn active-btn">قسم المسالك البولية</li>
-                            <li data-tab="#tab-department" class="tab-btn">قسم المخ والأعصاب</li>
-                            <li data-tab="#tab-gastrology" class="tab-btn">قسم أمراض الجهاز الهضمي</li>
-                            <li data-tab="#tab-cardiology" class="tab-btn">قسم أمراض القلب</li>
-                            <li data-tab="#tab-eye" class="tab-btn">قسم العناية بالعيون</li>
+                            @foreach ($sections as $section)
+                                @php
+                                    $slug =  Str::slug($section->name, '-');
+                                @endphp
+                                <li data-tab="#tab-{{ $slug }}"
+                                    class="tab-btn {{ $loop->first ? 'active-btn' : '' }}">
+                                    {{ $section->name }}
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!--Column-->
                     <div class="col-lg-8 col-md-12 col-sm-12">
                         <!--Tabs Container-->
                         <div class="tabs-content">
-
-                            <!-- Tab -->
-                            <div class="tab" id="tab-urology">
-                                <div class="content">
-                                    <h2>قسم المسالك البولية</h2>
-                                    <div class="title">Department of Neurology</div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-                                        <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                            nec, vulputate eget, arcu.</p>
-                                    </div>
-                                    <div class="two-column row clearfix">
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>01 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>02 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
+                            @foreach ($sections as $section)
+                                @php
+                                    $slug =  Str::slug($section->name, '-');
+                                @endphp
+                                <div class="tab {{ $loop->first ? 'active-tab' : '' }}" id="tab-{{ $slug }}">
+                                    <div class="content">
+                                        <h2>{{ $section->name }}</h2>
+                                        <div class="text">
+                                            <p>{{ $section->description }}</p>
                                         </div>
                                     </div>
-                                    <a href="doctors-detail.html" class="theme-btn btn-style-two"><span class="txt">View More</span></a>
+                                    <div class="doctors">
+                                        <h3>{{ trans('frontend.Doctors') }}</h3>
+                                        <ul>
+                                            @foreach($section->doctors as $doctor)
+                                                <li>{{ $doctor->name }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Tab -->
-                            <div class="tab active-tab" id="tab-department">
-                                <div class="content">
-                                    <h2>Neurology Department</h2>
-                                    <div class="title">Department of Neurology</div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-                                        <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                            nec, vulputate eget, arcu.</p>
-                                    </div>
-                                    <div class="two-column row clearfix">
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>01 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>02 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="doctors-detail.html" class="theme-btn btn-style-two"><span class="txt">View More</span></a>
-                                </div>
-                            </div>
-
-                            <!-- Tab -->
-                            <div class="tab" id="tab-gastrology">
-                                <div class="content">
-                                    <h2>Gastrology Department</h2>
-                                    <div class="title">Department of Neurology</div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-                                        <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                            nec, vulputate eget, arcu.</p>
-                                    </div>
-                                    <div class="two-column row clearfix">
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>01 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>02 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="doctors-detail.html" class="theme-btn btn-style-two"><span class="txt">View More</span></a>
-                                </div>
-                            </div>
-
-                            <!-- Tab -->
-                            <div class="tab" id="tab-cardiology">
-                                <div class="content">
-                                    <h2>Cardiology Department</h2>
-                                    <div class="title">Department of Neurology</div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-                                        <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                            nec, vulputate eget, arcu.</p>
-                                    </div>
-                                    <div class="two-column row clearfix">
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>01 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>02 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="doctors-detail.html" class="theme-btn btn-style-two"><span class="txt">View More</span></a>
-                                </div>
-                            </div>
-
-                            <!-- Tab -->
-                            <div class="tab" id="tab-eye">
-                                <div class="content">
-                                    <h2>Eye Care Department</h2>
-                                    <div class="title">Department of Neurology</div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-                                        <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                            nec, vulputate eget, arcu.</p>
-                                    </div>
-                                    <div class="two-column row clearfix">
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>01 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                        <div class="column col-lg-6 col-md-6 col-sm-12">
-                                            <h3>02 - Neurology Service</h3>
-                                            <div class="column-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                                penatibus
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="doctors-detail.html" class="theme-btn btn-style-two"><span class="txt">View More</span></a>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <!-- End Department Section -->
@@ -425,97 +207,7 @@
 
             <div class="row clearfix">
 
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="images/resource/team-1.jpg" alt=""/>
-                            <div class="overlay-box">
-                                <ul class="social-icons">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                </ul>
-                                <a href="#" class="appointment">Make Appointment</a>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="#">الدكتورة أندريا جونيا</a></h3>
-                            <div class="designation">أخصائي السرطان</div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="images/resource/team-2.jpg" alt=""/>
-                            <div class="overlay-box">
-                                <ul class="social-icons">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                </ul>
-                                <a href="#" class="appointment">Make Appointment</a>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="#">د. روبت سميث</a></h3>
-                            <div class="designation">جراح قلب</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="images/resource/team-3.jpg" alt=""/>
-                            <div class="overlay-box">
-                                <ul class="social-icons">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                </ul>
-                                <a href="#" class="appointment">Make Appointment</a>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="#">دكتور ويل لورا</a></h3>
-                            <div class="designation">طبيب الأسرة</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Block -->
-                <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="750ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="images/resource/team-4.jpg" alt=""/>
-                            <div class="overlay-box">
-                                <ul class="social-icons">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                </ul>
-                                <a href="#" class="appointment">Make Appointment</a>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="#">الدكتور أليكس فورغسين</a></h3>
-                            <div class="designation">أخصائي تقويم العظام</div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -523,17 +215,6 @@
     </section>
     <!-- End Team Section -->
 
-    <!-- Video Section -->
-    <section class="video-section" style="background-image:url(images/background/5.jpg)">
-        <div class="auto-container">
-            <div class="content">
-                <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image play-box"><span
-                        class="flaticon-play-button"><i class="ripple"></i></span></a>
-                <div class="text">نحن نهتم بصحتك<h2>نحن نهتم بك</h2>
-                </div>
-            </div>
-    </section>
-    <!-- End Video Section -->
 
     <!-- Appointment Section Two -->
     <section class="appointment-section-two">
@@ -545,13 +226,13 @@
                     <div class="image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="image">
-                                <img src="images/resource/doctor-2.png" alt=""/>
+                                <img src="images/resource/doctor-2.png" alt="" />
                             </div>
                         </div>
                     </div>
 
                     <!-- Form Column -->
-                    <div class="form-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="form-column col-lg-6 col-md-12 col-sm-12" id="appointment-form">
                         <div class="inner-column">
                             <!-- Sec Title -->
                             <div class="sec-title">
@@ -561,7 +242,7 @@
 
                             <!-- Appointment Form -->
                             <div class="appointment-form">
-                                <livewire:appointments.create/>
+                                <livewire:appointments.create />
                             </div>
 
                         </div>
@@ -586,7 +267,7 @@
                 <div class="testimonial-block-two">
                     <div class="inner-box">
                         <div class="image">
-                            <img src="images/resource/author-4.jpg" alt=""/>
+                            <img src="images/resource/author-4.jpg" alt="" />
                         </div>
                         <div class="text">
                             يعد المركز الطبي مكانًا رائعًا للحصول على جميع احتياجاتك الطبية. دخلت
@@ -615,7 +296,7 @@
                 <div class="testimonial-block-two">
                     <div class="inner-box">
                         <div class="image">
-                            <img src="images/resource/author-5.jpg" alt=""/>
+                            <img src="images/resource/author-5.jpg" alt="" />
                         </div>
                         <div class="text">
                             يعد المركز الطبي مكانًا رائعًا للحصول على جميع احتياجاتك الطبية. دخلت
@@ -644,7 +325,7 @@
                 <div class="testimonial-block-two">
                     <div class="inner-box">
                         <div class="image">
-                            <img src="images/resource/author-4.jpg" alt=""/>
+                            <img src="images/resource/author-4.jpg" alt="" />
                         </div>
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in
                             for a check up and did not wait more than 5 minutes before I was seen. I can only imagine
@@ -672,7 +353,7 @@
                 <div class="testimonial-block-two">
                     <div class="inner-box">
                         <div class="image">
-                            <img src="images/resource/author-5.jpg" alt=""/>
+                            <img src="images/resource/author-5.jpg" alt="" />
                         </div>
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in
                             for a check up and did not wait more than 5 minutes before I was seen. I can only imagine
@@ -819,80 +500,7 @@
     </section>
     <!-- End Doctor Info Section -->
 
-    <!-- News Section Two -->
-    <section class="news-section-two">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title centered">
-                <h2>آخر الأخبار والمقالات</h2>
-                <div class="separator style-three"></div>
-            </div>
-            <div class="row clearfix">
 
-                <!-- News Block Two -->
-                <div class="news-block-two col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="blog-detail.html"><img src="images/resource/news-4.jpg" alt=""/></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="content">
-                                <ul class="post-info">
-                                    <li><span
-                                            class="icon flaticon-chat-comment-oval-speech-bubble-with-text-lines"></span>
-                                        02
-                                    </li>
-                                    <li><span class="icon flaticon-heart"></span> 126</li>
-                                </ul>
-                                <ul class="post-meta">
-                                    <li>21 يونيو 2018 الساعة 8:12 مساءً</li>
-                                    <li>Post بواسطة: Admin</li>
-                                </ul>
-                                <h3><a href="blog-detail.html">خدمات التشخيص لانتقاء نتائج فعالة بشكل صحيح</a></h3>
-                                <div class="text">
-                                    هناك الكثير من النساء اللواتي يجهلن المخاطر العديدة
-                                    المرتبطة بصحتهم وتجاهل في النهاية
-                                </div>
-                                <a href="blog-detail.html" class="theme-btn btn-style-five"><span
-                                        class="txt">اقرا المزيد</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- News Block Two -->
-                <div class="news-block-two col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="blog-detail.html"><img src="images/resource/news-5.jpg" alt=""/></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="content">
-                                <ul class="post-info">
-                                    <li><span
-                                            class="icon flaticon-chat-comment-oval-speech-bubble-with-text-lines"></span>
-                                        02
-                                    </li>
-                                    <li><span class="icon flaticon-heart"></span> 126</li>
-                                </ul>
-                                <ul class="post-meta">
-                                    <li>21 يونيو 2018 الساعة 8:12 مساءً</li>
-                                    <li>Post بواسطة: Admin</li>
-                                </ul>
-                                <h3><a href="blog-detail.html">خدمات التشخيص لانتقاء نتائج فعالة بشكل صحيح</a></h3>
-                                <div class="text">
-                                    هناك الكثير من النساء اللواتي يجهلن المخاطر العديدة
-                                    المرتبطة بصحتهم وتجاهل في النهاية
-                                </div>
-                                <a href="blog-detail.html" class="theme-btn btn-style-five"><span
-                                        class="txt">اقرا المزيد</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-    </section>
 
     <!--Clients Section-->
     <section class="clients-section">
@@ -902,25 +510,32 @@
                 <!--Sponsors Carousel-->
                 <ul class="sponsors-carousel owl-carousel owl-theme">
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a>
+                        </figure>
                     </li>
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a>
+                        </figure>
                     </li>
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a>
+                        </figure>
                     </li>
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a>
+                        </figure>
                     </li>
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a>
+                        </figure>
                     </li>
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a>
+                        </figure>
                     </li>
                     <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a>
+                        </figure>
                     </li>
                 </ul>
             </div>
@@ -929,3 +544,4 @@
     </section>
     <!--End Clients Section-->
 @endsection
+
