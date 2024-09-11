@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Main Slider Three -->
-    <section class="main-slider-three">
+    <section class="main-slider-three" id="master">
         <div class="banner-carousel">
             <!-- Swiper -->
             <div class="swiper-wrapper">
@@ -46,7 +46,7 @@
     <!-- End Main Slider -->
 
     <!-- Health Section -->
-    <section class="health-section">
+    <section class="health-section" id="about-us">
         <div class="auto-container">
             <div class="inner-container">
 
@@ -132,11 +132,11 @@
     </section>
     <!-- End Featured Section -->
     @php
-         $sections = \App\Models\Section::with('doctors')->get();
+        $sections = \App\Models\Section::with('doctors')->get();
     @endphp
 
     <!-- Department Section Three -->
-    <section class="department-section-three">
+    <section class="department-section-three" id="section">
         <div class="image-layer" style="background-image:url(images/background/6.jpg)"></div>
         <div class="auto-container">
             <!-- Department Tabs-->
@@ -153,7 +153,7 @@
                         <ul class="tab-btns tab-buttons clearfix">
                             @foreach ($sections as $section)
                                 @php
-                                    $slug =  Str::slug($section->name, '-');
+                                    $slug = Str::slug($section->name, '-');
                                 @endphp
                                 <li data-tab="#tab-{{ $slug }}"
                                     class="tab-btn {{ $loop->first ? 'active-btn' : '' }}">
@@ -168,7 +168,7 @@
                         <div class="tabs-content">
                             @foreach ($sections as $section)
                                 @php
-                                    $slug =  Str::slug($section->name, '-');
+                                    $slug = Str::slug($section->name, '-');
                                 @endphp
                                 <div class="tab {{ $loop->first ? 'active-tab' : '' }}" id="tab-{{ $slug }}">
                                     <div class="content">
@@ -180,7 +180,7 @@
                                     <div class="doctors">
                                         <h3>{{ trans('frontend.Doctors') }}</h3>
                                         <ul>
-                                            @foreach($section->doctors as $doctor)
+                                            @foreach ($section->doctors as $doctor)
                                                 <li>{{ $doctor->name }}</li>
                                             @endforeach
                                         </ul>
@@ -201,7 +201,7 @@
 
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2>الأخصائيون الطبيون</h2>
+                <h2>{{ trans('frontend.Specialists') }}</h2>
                 <div class="separator"></div>
             </div>
 
@@ -224,11 +224,7 @@
 
                     <!-- Image Column -->
                     <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <img src="images/resource/doctor-2.png" alt="" />
-                            </div>
-                        </div>
+                        <img src="Website/images/appt2.jpg" alt="" />
                     </div>
 
                     <!-- Form Column -->
@@ -236,7 +232,7 @@
                         <div class="inner-column">
                             <!-- Sec Title -->
                             <div class="sec-title">
-                                <h2>حجز موعد</h2>
+                                <h2>{{ trans('frontend.Appointment') }}</h2>
                                 <div class="separator"></div>
                             </div>
 
@@ -254,136 +250,127 @@
     </section>
 
     <!-- Testimonial Section Two -->
-    <section class="testimonial-section-two">
+    <section class="testimonial-section-two" id="patients">
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2>ماذا يقول المرضى</h2>
+                <h2>{{ trans('frontend.patient_comment') }}</h2>
                 <div class="separator"></div>
             </div>
             <div class="testimonial-carousel owl-carousel owl-theme">
 
-                <!-- Tesimonial Block Two -->
+                <!-- Tesimonial Block Two - Arabic -->
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="images/resource/author-1.jpg" alt="" />
+                        </div>
+                        <div class="text">
+                            لقد كان المركز الطبي ممتازًا في تقديم الرعاية. تلقيت استشارة طبية فورية وكاملة. أشكر الطاقم على
+                            جهودهم واحترافيتهم. أوصي بشدة بخدماتهم.
+                        </div>
+                        <div class="lower-box">
+                            <div class="clearfix">
+                                <div class="pull-right">
+                                    <div class="quote-icon flaticon-quote"></div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="author-info">
+                                        <h3>محمد العلوي</h3>
+                                        <div class="author">مريض السكري</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tesimonial Block Two - Arabic -->
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="images/resource/author-2.jpg" alt="" />
+                        </div>
+                        <div class="text">
+                            الخدمة في هذا المركز الطبي كانت رائعة. تم الاعتناء بي بطريقة ممتازة من اللحظة التي دخلت فيها.
+                            الشكر الجزيل لكل الأطباء والممرضين.
+                        </div>
+                        <div class="lower-box">
+                            <div class="clearfix">
+                                <div class="pull-right">
+                                    <div class="quote-icon flaticon-quote"></div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="author-info">
+                                        <h3>فاطمة الزهراء</h3>
+                                        <div class="author">مريضة القلب</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tesimonial Block Two - English -->
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="images/resource/author-3.jpg" alt="" />
+                        </div>
+                        <div class="text">
+                            The hospital provided outstanding service during my visit. I was attended to promptly and
+                            professionally. My thanks go to the entire staff for their dedication and care.
+                        </div>
+                        <div class="lower-box">
+                            <div class="clearfix">
+                                <div class="pull-right">
+                                    <div class="quote-icon flaticon-quote"></div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="author-info">
+                                        <h3>Sarah Johnson</h3>
+                                        <div class="author">Cardiology Patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tesimonial Block Two - English -->
                 <div class="testimonial-block-two">
                     <div class="inner-box">
                         <div class="image">
                             <img src="images/resource/author-4.jpg" alt="" />
                         </div>
                         <div class="text">
-                            يعد المركز الطبي مكانًا رائعًا للحصول على جميع احتياجاتك الطبية. دخلت
-                            لإجراء فحص ولم تنتظر أكثر من 5 دقائق قبل رؤيتي. يمكنني أن أتصور
-                            نوع الخدمة التي تحصل عليها في حالة المشكلات الأكثر خطورة. شكرًا!
+                            I had an excellent experience at the medical center. The care I received was thorough and
+                            efficient. I am grateful to the doctors and nurses for their professionalism and compassion.
                         </div>
                         <div class="lower-box">
                             <div class="clearfix">
-
-                                <div class="pull-left">
+                                <div class="pull-right">
                                     <div class="quote-icon flaticon-quote"></div>
                                 </div>
-                                <div class="pull-right">
-                                    <div class="author-info">
-                                        <h3>ماكس وينشستر</h3>
-                                        <div class="author">مريض الكلى</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tesimonial Block Two -->
-                <div class="testimonial-block-two">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="images/resource/author-5.jpg" alt="" />
-                        </div>
-                        <div class="text">
-                            يعد المركز الطبي مكانًا رائعًا للحصول على جميع احتياجاتك الطبية. دخلت
-                            لإجراء فحص ولم تنتظر أكثر من 5 دقائق قبل رؤيتي. يمكنني أن أتصور
-                            نوع الخدمة التي تحصل عليها في حالة المشكلات الأكثر خطورة. شكرًا!
-                        </div>
-                        <div class="lower-box">
-                            <div class="clearfix">
-
                                 <div class="pull-left">
-                                    <div class="quote-icon flaticon-quote"></div>
-                                </div>
-                                <div class="pull-right">
                                     <div class="author-info">
-                                        <h3>جاك مونيتا</h3>
-                                        <div class="author">مريض الكلى</div>
+                                        <h3>John Doe</h3>
+                                        <div class="author">General Patient</div>
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tesimonial Block Two -->
-                <div class="testimonial-block-two">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="images/resource/author-4.jpg" alt="" />
-                        </div>
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in
-                            for a check up and did not wait more than 5 minutes before I was seen. I can only imagine
-                            the type of service you get for more serious issues. Thanks!
-                        </div>
-                        <div class="lower-box">
-                            <div class="clearfix">
-
-                                <div class="pull-left">
-                                    <div class="quote-icon flaticon-quote"></div>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="author-info">
-                                        <h3>Max Winchester</h3>
-                                        <div class="author">Kidny Patient</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tesimonial Block Two -->
-                <div class="testimonial-block-two">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="images/resource/author-5.jpg" alt="" />
-                        </div>
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in
-                            for a check up and did not wait more than 5 minutes before I was seen. I can only imagine
-                            the type of service you get for more serious issues. Thanks!
-                        </div>
-                        <div class="lower-box">
-                            <div class="clearfix">
-
-                                <div class="pull-left">
-                                    <div class="quote-icon flaticon-quote"></div>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="author-info">
-                                        <h3>Jack Monita</h3>
-                                        <div class="author">Kidny Patient</div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </section>
     <!-- End Testimonial Section Two -->
 
     <!-- Counter Section -->
-    <section class="counter-section style-two" style="background-image: url(images/background/pattern-3.png)">
+    <section class="counter-section style-two" style="background-image: url(images/background/pattern-3.png); height:100px" id="contact">
         <div class="auto-container">
 
             <!-- Fact Counter -->
@@ -394,11 +381,11 @@
                     <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="content">
-                                <div class="icon flaticon-logout"></div>
+                                <i class="fas fa-hospital-user" style="color: #ffffff; font-size: 3rem;"></i>&nbsp;&nbsp;
                                 <div class="count-outer count-box">
                                     <span class="count-text" data-speed="2500" data-stop="2350">0</span>
                                 </div>
-                                <h4 class="counter-title">مرضى راضون</h4>
+                                <h4 class="counter-title">{{ trans('frontend.satisfied_patients') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -407,11 +394,11 @@
                     <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="content">
-                                <div class="icon flaticon-logout"></div>
+                                <i class="fas fa-user-doctor" style="color: #ffffff; font-size: 3rem;"></i>&nbsp;&nbsp;
                                 <div class="count-outer count-box alternate">
                                     +<span class="count-text" data-speed="3000" data-stop="350">0</span>
                                 </div>
-                                <h4 class="counter-title">فريق الطبيب</h4>
+                                <h4 class="counter-title">{{ trans('frontend.medical_team') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -420,11 +407,11 @@
                     <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="content">
-                                <div class="icon flaticon-logout"></div>
+                                <i class="fas fa-circle-check" style="color: #ffffff; font-size: 3rem;"></i>&nbsp;&nbsp;
                                 <div class="count-outer count-box">
                                     <span class="count-text" data-speed="3000" data-stop="2150">0</span>
                                 </div>
-                                <h4 class="counter-title">مهمة النجاح</h4>
+                                <h4 class="counter-title">{{ trans('frontend.successful_missions') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -433,115 +420,40 @@
                     <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
                             <div class="content">
-                                <div class="icon flaticon-logout"></div>
+                                <i class="fas fa-syringe" style="color: #ffffff; font-size: 3rem;"></i>&nbsp;&nbsp;
                                 <div class="count-outer count-box">
                                     +<span class="count-text" data-speed="2500" data-stop="225">0</span>
                                 </div>
-                                <h4 class="counter-title">جراحات ناجحة</h4>
+                                <h4 class="counter-title">{{ trans('frontend.successful_surgeries') }}</h4>
                             </div>
                         </div>
                     </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- End Counter Section -->
-
-    <!-- Doctor Info Section -->
-    <section class="doctor-info-section">
-        <div class="auto-container">
-            <div class="inner-container">
-                <div class="row clearfix">
-
-                    <!-- Doctor Block -->
-                    <div class="doctor-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3>ساعات العمل</h3>
-                            <ul class="doctor-time-list">
-                                <li>من الإثنين إلى الجمعة<span>8:00am–7:00pm</span></li>
-                                <li>السبت <span>9:00am–5:00pm</span></li>
-                                <li>الأحد<span>9:00am–3:00pm</span></li>
+                    <!-- Contact Section -->
+                    <div class="row clearfix" style="margin-top: 20px; color: white;">
+                        <div class="contact-list d-flex align-items-center">
+                            <ul class="contact-list d-flex align-items-center"
+                                style="list-style: none; padding: 0; margin: 0; flex-wrap: wrap;">
+                                <li style="margin-right: 20px;">
+                                    <span class="icon flaticon-placeholder" style="color: white;"></span>
+                                    {{ trans('frontend.address') }}<br>
+                                    CA 94117-1080 {{ trans('frontend.usa') }}
+                                </li>
+                                <li style="margin-right: 20px;">
+                                    <span class="icon flaticon-call" style="color: white;"></span>
+                                    {{ trans('frontend.working_hours') }}<br>
+                                    <a href="tel:+898-68679-575-09" style="color: white;">+898 68679 575 09</a>
+                                </li>
+                                <li style="margin-right: 20px; margin-Bottom: 21px;">
+                                    <span class="icon flaticon-message" style="color: white;"></span>
+                                    {{ trans('frontend.have_question') }}
+                                    <a href="mailto:info@gmail.com" style="color: white;"> info@gmail.com</a>
+                                </li>
                             </ul>
-                            <h4>حالات الطوارئ</h4>
-                            <div class="phone">اتصل بنا ! <strong>+898 68679 575 09</strong></div>
                         </div>
                     </div>
-
-                    <!-- Doctor Block -->
-                    <div class="doctor-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3>جدول الأطباء</h3>
-                            <div class="text">
-                                ما يلي هو للإرشاد فقط لمساعدتك في التخطيط لموعدك
-                                طبيب أو ممرضة مفضلة. لا تضمن توافر الأطباء أو الممرضات
-                                قد يكون في بعض الأحيان يحضر إلى واجبات أخرى
-                            </div>
-                            <a href="#" class="detail">تفاصيل اكثر</a>
-                        </div>
-                    </div>
-
-                    <!-- Doctor Block -->
-                    <div class="doctor-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3>العناية الصحية الاولية</h3>
-                            <div class="text">عندما تعلم أنك تستخدم أفضل مواهبك من أجل شيء تحبه ، فأنت
-                                لا تستطيع ذلك. التواصل الفعال هو الأساس لبناء علامات تجارية صلبة مثل
-                                علاقة السفن بالبناء مع عملائنا
-                            </div>
-                            <a href="#" class="detail">اتصل الآن</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End Doctor Info Section -->
-
-
-
-    <!--Clients Section-->
-    <section class="clients-section">
-        <div class="outer-container">
-
-            <div class="sponsors-outer">
-                <!--Sponsors Carousel-->
-                <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a>
-                        </figure>
-                    </li>
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a>
-                        </figure>
-                    </li>
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a>
-                        </figure>
-                    </li>
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a>
-                        </figure>
-                    </li>
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a>
-                        </figure>
-                    </li>
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a>
-                        </figure>
-                    </li>
-                    <li class="slide-item">
-                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a>
-                        </figure>
-                    </li>
-                </ul>
-            </div>
 
         </div>
     </section>
-    <!--End Clients Section-->
 @endsection
-
