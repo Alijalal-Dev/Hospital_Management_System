@@ -57,7 +57,7 @@
                                     <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#Deleted{{ $appointment->id }}"><i class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
-                            @include('Dashboard.appointments.approval')
+                            @include('Dashboard.appointments.approval2')
                             @include('Dashboard.appointments.delete')
                             @endforeach
                         </tbody>

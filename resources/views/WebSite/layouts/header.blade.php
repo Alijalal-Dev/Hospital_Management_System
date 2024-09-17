@@ -36,11 +36,6 @@
 
     <!-- Main Menu End-->
     <div class="outer-box clearfix">
-        <!-- Main Menu End-->
-        <div class="nav-box">
-            <div class="nav-btn nav-toggler navSidebar-button"><span class="icon flaticon-menu-1"></span></div>
-        </div>
-
         <!-- Social Box -->
         <ul class="social-box clearfix">
             <li><a title="تسجيل دخول" href="{{route('dashboard.user')}}"><span class="fas fa-user"></span></a></li>

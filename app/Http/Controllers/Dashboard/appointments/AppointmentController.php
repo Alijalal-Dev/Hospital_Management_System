@@ -39,7 +39,7 @@ class AppointmentController extends Controller
 
         // Format the appointment date for comparison
         $appointment_date = date('Y-m-d', strtotime($request->appointment));
-        
+
         $appointment_count = Appointment::where('doctor_id', $appointment->doctor_id)
             ->whereDate('appointment', $appointment_date)
             ->where('type', 'مؤكد')->count();
@@ -82,6 +82,18 @@ class AppointmentController extends Controller
         $client->messages->create($receiverNumber, [
             'from' => $twilio_number,
             'body' => $message
+        ]);
+        session()->flash('add');
+        return back();
+    }
+
+    public function approval2(Request $request, $id)
+    {
+        $appointment = Appointment::findorFail($id);
+
+        $appointment->update([
+            'type' => 'منتهي',
+            'appointment' => $request->appointment
         ]);
         session()->flash('add');
         return back();
