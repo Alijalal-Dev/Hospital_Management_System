@@ -43,51 +43,51 @@ Route::group(
     function () {
 
 
-        //################################ dashboard user ##########################################
+        // dashboard user
         Route::get('/dashboard/user', function () {
             return view('Dashboard.User.dashboard');
         })->middleware(['auth'])->name('dashboard.user');
-        //################################ end dashboard user #####################################
+        // end dashboard user
 
 
 
-        //################################ dashboard admin ########################################
+        // dashboard admin
         Route::get('/dashboard/admin', function () {
             return view('Dashboard.Admin.dashboard');
         })->middleware(['auth:admin'])->name('dashboard.admin');
 
-        //################################ dashboard doctor ########################################
+        // dashboard doctor
 
         Route::get('/dashboard/doctor', function () {
             return view('Dashboard.doctor.dashboard');
         })->middleware(['auth:doctor'])->name('dashboard.doctor');
 
-        //################################ end dashboard doctor #####################################
+        // end dashboard doctor
 
-        //################################ end dashboard admin #####################################
+        // end dashboard admin
         Route::middleware(['auth:admin'])->group(function () {
 
-            //############################# sections route ##########################################
+            // sections route
 
             Route::resource('Sections', App\Http\Controllers\Dashboard\SectionController::class);
 
-            //############################# end sections route ######################################
+            // end sections route
 
-            //############################# Doctors route ##########################################
+            // Doctors route
 
             Route::resource('Doctors', DoctorController::class);
             Route::post('update_password', [DoctorController::class, 'update_password'])->name('update_password');
             Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
 
-            //############################# end Doctors route ######################################
+            // end Doctors route
 
-            //############################# SingleService route ##########################################
+            // SingleService route
 
             Route::resource('Service', SingleServiceController::class);
 
-            //############################# end SingleService route ######################################
+            // end SingleService route
 
-            //############################# GroupServices route ##########################################
+            // GroupServices route
 
 
 
@@ -97,70 +97,70 @@ Route::group(
                 return Route::post('/custom/livewire/update', $handle);
             });
 
-            //############################# end GroupServices route ######################################
+            // end GroupServices route
 
-            //############################# insurance route ##########################################
+            // insurance route
 
             Route::resource('insurance', InsuranceController::class);
 
-            //############################# end insurance route ######################################
+            // end insurance route
 
-            //############################# Ambulance route ##########################################
+            // Ambulance route
 
             Route::resource('Ambulance', AmbulanceController::class);
 
-            //############################# end Ambulance route ######################################
+            // end Ambulance route
 
-            //############################# Patients route ##########################################
+            // Patients route
 
             Route::resource('Patients', PatientController::class);
 
-            //############################# end Patients route ######################################
+            // end Patients route
 
-            //############################# single_invoices route ##########################################
+            // single_invoices route
 
             Route::view('single_invoices', 'livewire.single_invoices.index')->name('single_invoices');
             // print single invoice
             Route::view('Print_single_invoices', 'livewire.single_invoices.print')->name('Print_single_invoices');
 
-            //############################# end single_invoices route ######################################
+            // end single_invoices route
 
-            //############################# Receipt route ##########################################
+            // Receipt route
 
             Route::resource('Receipt', ReceiptAccountController::class);
 
-            //############################# end Receipt route ######################################
+            // end Receipt route
 
-            //############################# Payment route ##########################################
+            // Payment route
 
             Route::resource('Payment', PaymentAccountController::class);
 
-            //############################# end Payment route ######################################
+            // end Payment route
 
-            //############################# RayEmployee route ##########################################
+            // RayEmployee route
 
             Route::resource('ray_employee', RayEmployeeController::class);
 
-            //############################# end RayEmployee route ######################################
+            // end RayEmployee route
 
 
-            //############################# laboratorie_employee route ##########################################
+            // laboratorie_employee route
 
             Route::resource('laboratorie_employee', LaboratorieEmployeeController::class);
 
-            //############################# end laboratorie_employee route ######################################
+            // end laboratorie_employee route
 
 
-            //############################# single_invoices route ##########################################
+            // single_invoices route
 
             Route::view('group_invoices', 'livewire.Group_invoices.index')->name('group_invoices');
 
             Route::view('group_Print_single_invoices', 'livewire.Group_invoices.print')->name('group_Print_single_invoices');
 
-            //############################# end single_invoices route ######################################
+            // end single_invoices route
 
 
-            //############################# Appointments route ######################################
+            // Appointments route
             Route::get('appointments',[AppointmentController::class,'index'])->name('appointments.index');
             Route::put('appointments/approval/{id}',[AppointmentController::class,'approval'])->name('appointments.approval');
             Route::put('appointments/approval2/{id}',[AppointmentController::class,'approval2'])->name('appointments.approval2');

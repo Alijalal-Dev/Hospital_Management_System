@@ -28,21 +28,21 @@ Route::group(
     ], function () {
 
 
-    //################################ dashboard laboratorie_employee ########################################
+    // dashboard laboratorie_employee
 
     Route::get('/dashboard/laboratorie_employee', function () {
         return view('Dashboard.dashboard_LaboratorieEmployee.dashboard');
     })->middleware(['auth:laboratorie_employee'])->name('dashboard.laboratorie_employee');
-    //################################ end dashboard doctor #####################################
+    // end dashboard doctor
 
     Route::middleware(['auth:laboratorie_employee'])->group(function () {
 
-        //############################# invoices route ##########################################
+        // invoices route
          Route::resource('invoices_laboratorie_employee', InvoiceController::class);
          Route::get('completed_invoices', [InvoiceController::class,'completed_invoices'])->name('completed_invoices');
          Route::get('laboratories/{id}', [InvoiceController::class,'view_laboratories'])->name('view_laboratories');
-        //############################# end invoices route ######################################
-    
+        // end invoices route
+
    });
 
 

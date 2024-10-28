@@ -28,26 +28,27 @@ Route::group(
     ], function () {
 
 
-    //################################ dashboard doctor ########################################
+    // dashboard doctor
 
     Route::get('/dashboard/ray_employee', function () {
         return view('Dashboard.dashboard_RayEmployee.dashboard');
     })->middleware(['auth:ray_employee'])->name('dashboard.ray_employee');
 
 
-    //################################ end dashboard doctor #####################################
+    //end dashboard doctor
 
     Route::middleware(['auth:ray_employee'])->group(function () {
 
-        //############################# invoices route ##########################################
+        //invoices route
          Route::resource('invoices_ray_employee', InvoiceController::class);
          Route::get('completed_invoices_rays', [InvoiceController::class,'completed_invoices'])->name('completed_invoices_rays');
-        //############################# end invoices route ######################################
+        //end invoices route
+        
         //show details of patient rays
         Route::get('rays/{id}', [InvoiceController::class,'viewRays'])->name('view_rays');
-    
+
         });
-    
+
 
 //---------------------------------------------------------------------------------------------------------------
 

@@ -30,13 +30,13 @@ Route::group(
     ], function () {
 
 
-    //################################ dashboard doctor ########################################
+    // dashboard doctor
 
     Route::get('/dashboard/doctor', function () {
         return view('Dashboard.doctor.dashboard');
     })->middleware(['auth:doctor'])->name('dashboard.doctor');
 
-    //################################ end dashboard doctor #####################################
+    // end dashboard doctor
 
 //---------------------------------------------------------------------------------------------------------------
 
@@ -45,52 +45,52 @@ Route::group(
 
         Route::prefix('doctor')->group(function () {
 
-            //############################# completed_invoices route ##########################################
+            // completed_invoices route
             Route::get('completed_invoices', [InvoiceController::class,'completedInvoices'])->name('completedInvoices');
-            //############################# end invoices route ################################################
+            // end invoices route 
 
-            //############################# review_invoices route ##########################################
+            // review_invoices route
             Route::get('review_invoices', [InvoiceController::class,'reviewInvoices'])->name('reviewInvoices');
-            //############################# end invoices route #############################################
+            // end invoices route
 
-            //############################# invoices route ##########################################
+            // invoices route
             Route::resource('invoices', InvoiceController::class);
-            //############################# end invoices route ######################################
+            // end invoices route
 
-               //############################# review_invoices route ##########################################
+               // review_invoices route
                Route::post('add_review', [DiagnosticController::class,'addReview'])->name('add_review');
-               //############################# end invoices route #############################################
+               // end invoices route
 
-            //############################# Diagnostics route ##########################################
+            // Diagnostics route
 
             Route::resource('Diagnostics', DiagnosticController::class);
 
-            //############################# end Diagnostics route ######################################
+            // end Diagnostics route
 
-              //############################# rays route ##########################################
+              // rays route
 
               Route::resource('rays', RayController::class);
 
-              //############################# end rays route ######################################
+              // end rays route
 
-              //############################# Laboratories route ##########################################
+              // Laboratories route
 
             Route::resource('Laboratories', LaboratorieController::class);
             Route::get('show_laboratorie/{id}', [InvoiceController::class,'showLaboratorie'])->name('show.laboratorie');
 
-            //############################# end Laboratories route ######################################
+            // end Laboratories route
 
 
-              //############################# patientsdetails route ##########################################
+              // patientsdetails route
 
               Route::get('patient_details/{id}', [PatientDetailsController::class,'index'])->name('patient_details');
 
-              //############################# end patientsdetails  route ######################################
+              // end patientsdetails  route
 
-              //############################# Chat route ##########################################
+              // Chat route
               Route::get('list/patients', Createchat::class)->name('list.patients');
               Route::get('chat/patients', Main::class)->name('chat.patients');
-              //############################# end Chat route ######################################
+              // end Chat route
 
 
               Route::get('/404', function () {

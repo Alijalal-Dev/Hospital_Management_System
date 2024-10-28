@@ -1,0 +1,21 @@
+
+1st go to the terminal and write
+
+composer require maatwebsite/excel:*
+
+2-Run composer update
+
+3-Go to config->app.php
+
+Add to providers Maatwebsite\Excel\ExcelServiceProvider::class,
+
+Add to aliases 'Excel' =>Maatwebsite\Excel\Facades\Excel::class,
+
+4-Run composer dump-autoload
+
+5-then go to php.ini (c:\xampp\php\php.ini) and search ;gd make it
+to
+
+gd
+
+6- php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config
